@@ -26,15 +26,17 @@ between all items, and after the last item. */ -->
 
     <style>
       .container {
-        height: 900px;
+        height: 500px;
         background-color: dodgerblue;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         /* It always works with the main-Axis */
 
         justify-content:space-evenly;
         /* This works with the cross Axis */
-        align-items:end ;
+        align-items:start ;
+
+        flex-wrap: wrap;
       
 
 
@@ -46,6 +48,9 @@ between all items, and after the last item. */ -->
         height: 100px;
         margin: 10px;
         background-color: coral;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     </style>
   </head>
@@ -55,6 +60,8 @@ between all items, and after the last item. */ -->
       <div class="item box2">Box2</div>
       <div class="item box3">Box3</div>
       <div class="item box4">Box4</div>
+      
+     
     </div>
   </body>
 </html>
