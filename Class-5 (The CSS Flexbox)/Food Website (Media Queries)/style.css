@@ -142,3 +142,27 @@ footer {
     text-align: center;
     color: white;
 }
+
+/* // min width */
+
+@media(max-width:1000px){
+    header{
+        flex-direction: column;
+    }
+    
+
+    .menu-items{
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .menu-item{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
