@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Grid Layout</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        font-size: 20px;
+        height: 100vh;
+        display: grid;
+        grid-template-areas: 
+        'top top top top'
+        'nav content sidebar sidebar'
+        'nav footer footer footer';
+        grid-template-columns: 1fr 4fr 1fr 1fr;
+        grid-template-rows: 80px 1fr 70px;
+    }
+
+    header, main, nav, aside, footer{
+        background-color: tomato;
+        color: white;
+        padding: 20px;
+        border: skyblue 1px solid;
+    }
+
+    header{
+        grid-area: top;
+    }
+
+    nav{
+        grid-area: nav;
+    }
+
+    main{
+        grid-area: content;
+    }
+
+    aside{
+        grid-area: sidebar;
+    }
+    footer{
+        grid-area: footer;
+    }
+   
+</style>
+<body>
+    <header>Header</header>
+    <main>Content</main>
+    <nav>Navigation Bar</nav>
+    <aside>SideBar</aside>
+   
+    <footer>footer</footer>
+</body>
+</html>

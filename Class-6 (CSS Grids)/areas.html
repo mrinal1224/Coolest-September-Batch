@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Layout</title>
+    <style>
+      body {
+        display: grid;
+        height: 100vh;
+        grid-template-areas:
+          "top top top"
+          "nav content sidebar"
+          "nav footer footer";
+        grid-template-columns:1fr 1fr 200px;
+        grid-template-rows: 80px 1fr 70px;
+      }
+      header,
+      nav,
+      main,
+      aside,
+      footer {
+        background-color: tomato;
+        color: white;
+        border: skyblue 1px solid;
+        padding: 20px;
+      }
+
+      header {
+        grid-area: top;
+      }
+
+      nav {
+        grid-area: nav;
+      }
+
+      main {
+        grid-area: content;
+      }
+
+      aside {
+        grid-area: sidebar;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <nav>Navigation Bar</nav>
+    <main>Content</main>
+    <aside>sidebar</aside>
+    <footer>footer</footer>
+  </body>
+</html>
