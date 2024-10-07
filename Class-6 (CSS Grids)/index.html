@@ -20,14 +20,17 @@
 
         .container{
            width: 1200px;
-           height: 800px;
+           /* height: 800px; */
            margin: 100px auto;
            padding: 10px;
            display: grid;
            border: 4px solid black;
             /* fractions */
-           grid-template-columns:1fr 2fr 1fr;
-           grid-template-rows:1fr 2fr 1fr ;
+           grid-template-columns:repeat(3 , 1fr);
+           /* grid-template-rows:1fr 2fr 1fr ; */
+           gap : 20px
+           /* column-gap:10px;
+           row-gap: 20px; */
 
       
 
@@ -40,6 +43,15 @@
           padding: 20px;
           border: 1px solid lightblue;
         }
+
+        #item-2{
+            width: 100px;
+            height: 10px;
+            align-self: baseline;
+            justify-self: start;
+          
+           
+        }
     </style>
 </head>
 <body>
@@ -47,7 +59,7 @@
 
     <div class="container">
         <div class="item">Item 1</div>
-        <div class="item">Item 2</div>
+        <div class="item" id="item-2">Item 2</div>
         <div class="item">Item 3</div>
         <div class="item">Item 4</div>
         <div class="item">Item 5</div>
