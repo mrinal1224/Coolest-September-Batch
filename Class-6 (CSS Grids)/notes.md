@@ -843,6 +843,42 @@ Creating Complex Grids: You can create more complex patterns by repeating a set 
   ```
 This repeats the pattern 1fr 2fr three times, resulting in a six-column grid with alternating column sizes.
 
+title: Flexbox vs Grid (A Comparision) description: This section explains what is Grid Areas duration: 900 card_type: cue_card
+Flexbox vs Grid
+Flexbox One-Dimensional Layout: Flexbox is primarily used for laying out items in a single dimension, either a row or a column. Content-First Approach: It's ideal when the size of the flex container's content or the number of items is dynamic or unknown. Alignment and Distribution: Easily align items vertically or horizontally and distribute space between items.
+
+Key Properties:
+display: flex or display: inline-flex: Defines a flex container.
+flex-direction: Specifies the direction of the main axis (row, row-reverse, column, column-reverse).
+justify-content: Aligns items along the main axis.
+align-items: Aligns items along the cross axis.
+flex-wrap: Defines whether items should wrap into multiple lines or not.
+Use Flexbox when:
+
+You're aligning a navigation bar, centering an item on the screen, or building a small-scale layout with a linear flow.
+
+Ideal for one-dimensional layouts, such as navigation bars, headers, footers, and simple component arrangements.
+
+Suited for aligning items within a container along a single axis.
+
+Great for creating responsive designs when dealing with dynamic content.
+
+Grid Two-Dimensional Layout: Grid allows for laying out items in both rows and columns simultaneously. Layout-First Approach: Best for when you have a clear idea of the layout, regardless of the content. Grid Areas: Enables creating complex layouts by defining areas in a grid. Consistent Sizing: Offers control over row and column sizing, and the ability to align the entire grid. Complex Layouts: More suitable for larger, more complex layouts.
+
+Key Properties:
+display: grid: Defines a grid container.
+grid-template-rows and grid-template-columns: Specifies the size and structure of the grid.
+grid-gap or grid-row-gap and grid-column-gap: Defines the space between grid items.
+grid-template-areas: Assigns names to areas of the grid.
+justify-items and align-items: Aligns grid items within the grid cells.
+Use Grid when:
+
+Creating a complex web page layout with multiple rows and columns, like a photo gallery or a magazine-style layout,image galleries, and responsive dashboards.
+
+Well-suited for complex layouts with both rows and columns.
+
+Provides a powerful solution for defining the placement and alignment of items in a grid.
+
 
 Resources to Follow - 
 
