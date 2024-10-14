@@ -6,13 +6,13 @@ console.log(a) // Number
 
 
 a = 'Hello'
-console.log(a)
+console.log(typeof a)
 
 const c = 3.14
 
- c  = 9.8
 
-console.log(c)
+
+console.log(typeof c)
 
 
 
