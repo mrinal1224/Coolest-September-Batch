@@ -12,7 +12,7 @@ const c = 3.14
 
 
 
-console.log(typeof c)
+console.log(typeof c) // number
 
 
 
