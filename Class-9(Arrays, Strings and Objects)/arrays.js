@@ -1,6 +1,6 @@
 let cars = ['Bentley' , 'Volvo' , 'Urus']
 
- console.log(cars)
+//  console.log(cars)
 // length property
 // console.log(cars.length)
 
@@ -30,17 +30,35 @@ let cars = ['Bentley' , 'Volvo' , 'Urus']
 // cars.shift()// BMW
 // cars.shift()// Bentley
 
-console.log(cars)
+// console.log(cars)
 
 // includes- This will return boolean value based on if the element exists or not
 
-let hasCar = cars.includes('mercedes')
-console.log(hasCar)
+// let hasCar = cars.includes('mercedes')
+// console.log(hasCar)
 
 // indexOf
 
-let index = cars.indexOf('Urus')
-console.log(index)
+// let index = cars.indexOf('Urus')
+// console.log(index)
+
+// Slice and splice
+
+
+
+// let slicedCars = cars2.slice(2,4)
+
+// console.log(slicedCars)
+
+let cars2 = ['Bentley' , 'Volvo' , 'Urus' , 'BMW' , 'Mercedes' , 'rolls royce']
+// splice
+
+let splicedArr = cars2.splice(2,4)
+console.log(splicedArr)
+
+
+
+
 
 
 
