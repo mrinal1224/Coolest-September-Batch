@@ -1,12 +1,26 @@
 function parent(){
-    var a = 10
+    var a = 10;
     function child(){
 
-        console.log(a)
-    }
-     return child
-}
+        var b = 20;
+        console.log(a) // 10
+        console.log(b)
 
-let childFN = parent()
-console.log(childFN) /
-childFN()
+        function child2(){
+
+            console.log(a+b) //30
+        }
+        return child2
+    }
+    return child
+}
+let childReceived = parent()
+console.log(childReceived)
+let child2Recieved = childReceived()
+console.log(child2Recieved)
+child2Recieved()
+
+
+
+// let child2Recieved = childReceived()
+// child2Recieved()
