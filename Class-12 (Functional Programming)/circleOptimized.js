@@ -23,6 +23,7 @@ function calculateDiameter(radi){
 
 function calculate(raidusArr , cb){
   let data = [ ]
+  
 
   for(let i=0 ; i<raidusArr.length ; i++){
         data.push(cb(raidusArr[i]) )
