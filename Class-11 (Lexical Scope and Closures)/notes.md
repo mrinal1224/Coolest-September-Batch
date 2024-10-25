@@ -1,6 +1,3 @@
-
-
-
 ## Agenda
 
 Todays Agenda:
