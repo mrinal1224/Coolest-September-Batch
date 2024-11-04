@@ -13,7 +13,13 @@ function sayHello(){
     console.log("Hello")
 } // 2-3 seconds
 
-setTimeout(sayHello , 0)
 
+function sayBye(){
+    console.log('Bye')
+}
+
+
+setTimeout(sayHello , 3000)
+setTimeout(sayBye , 2000)
 console.log('End')
 
