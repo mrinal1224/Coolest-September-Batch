@@ -20,6 +20,6 @@ function sayBye(){
 
 
 setTimeout(sayHello , 3000)
-setTimeout(sayBye , 2000)
+setTimeout(sayBye , 3000)
 console.log('End')
 
