@@ -12,7 +12,7 @@
 
 // read a File with Promise
 
-let promisReadFile = fs.promises.readFile('f4.txt')
+let promisReadFile = fs.promises.readFile('f1.txt')
 console.log(promisReadFile)
 
 // then and catch
