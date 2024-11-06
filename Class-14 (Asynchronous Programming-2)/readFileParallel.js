@@ -1,4 +1,5 @@
 const fs = require('fs')
+console.log('Start')
 
 let promiseReadFile1 = fs.promises.readFile('f1.txt')
 let promiseReadFile2 = fs.promises.readFile('f2.txt')
@@ -24,3 +25,5 @@ promiseReadFile3.then(function(data) {
 }).catch(function(err) {
     console.log('This is Your Error -> ' + err)
 })
+
+console.log("End")
