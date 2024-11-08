@@ -1,14 +1,14 @@
 const p1 = new Promise(function(resolve , reject){
     setTimeout(function(){
         resolve('The Promise has been Resolved')
-    } , 5000)
+    } , 40000)
    
 })
 
 const p2 = new Promise(function(resolve , reject){
     setTimeout(function(){
         resolve('The Promise has been Resolved 2')
-    } , 10000)
+    } , 60000)
    
 })
 
@@ -33,15 +33,17 @@ async function handlePromise(){
     console.log(val2)
 }
 
-async function printName(){
-    console.log('Scaler Create Impact')
-}
+console.log('Bye')
+
+// async function printName(){
+//     console.log('Scaler Create Impact')
+// }
 
 //  resolvePromise()
 
 handlePromise()
 
-printName()
+
 
 
 
