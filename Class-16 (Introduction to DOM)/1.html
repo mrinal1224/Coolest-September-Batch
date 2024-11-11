@@ -11,11 +11,36 @@
   <body>
     <button id="btn-1">Say Hello</button>
 
+
     <script>
 
       // Show Hello on the click of the Button
-      // QuerySelector
+      // querySelector , getElementbyId , getElementbyClassName
+        const helloBtn = document.querySelector('#btn-1')
 
+        helloBtn.addEventListener('click' , function(){
+             const helloDiv = document.createElement('div')
+           
+
+             helloDiv.innerText = "Hello"
+
+             console.log(helloDiv)
+
+             const body = document.querySelector('body')
+
+             body.appendChild(helloDiv)
+
+             
+
+
+        })
+        
+
+
+
+
+      
+      
       
 
 
