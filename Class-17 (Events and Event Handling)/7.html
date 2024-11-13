@@ -37,6 +37,28 @@
 
       // Individual delete buttons
 
+      const removeAllBtn = document.querySelector('#removeAll')
+
+      const allDeleteButtons = document.querySelectorAll('.delete_button')
+      console.log(allDeleteButtons)
+
+      for(let i=0 ; i<allDeleteButtons.length ; i++){
+        allDeleteButtons[i].addEventListener('click' , function(e){
+          e.target.parentElement.remove()
+        })
+      }
+
+      // removeAll
+      removeAllBtn.addEventListener('click' , function(){
+         const MyList = document.querySelector('ul')
+         MyList.remove()
+      })
+
+
+
+
+
+
    
       
 
