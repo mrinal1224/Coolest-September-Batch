@@ -112,31 +112,22 @@
     <script>
       // Q Make the filter work
 
-      const dropDown = document.querySelector('select')
-      console.log(dropDown)
+      const dropDown = document.querySelector("select");
+      console.log(dropDown);
 
-      dropDown.addEventListener('change' , function(){
-          const filterVal = dropDown.value
-       
+      dropDown.addEventListener("change", function () {
+        const filterVal = dropDown.value;
 
-          const prices = document.querySelectorAll('.price')
-         
+        const prices = document.querySelectorAll(".price");
 
-          for(let i=0 ; i<prices.length ; i++){
-         if(prices[i].getAttribute('data-category')==filterVal) {
-           prices[i].parentElement.style.display = 'block'
-         }
-         else{
-          prices[i].parentElement.style.display = 'none'
-         }
+        for (let i = 0; i < prices.length; i++) {
+          if (prices[i].getAttribute("data-category") == filterVal) {
+            prices[i].parentElement.style.display = "block";
+          } else {
+            prices[i].parentElement.style.display = "none";
           }
-
-
-      })
-
-
-
-  
+        }
+      });
     </script>
   </body>
 </html>
