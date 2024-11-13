@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8" />
+    <meta http - equiv = "X - UA - Compatible" content = "IE = edge" />
+    <meta name = "viewport" content = "width = device - width, initial - scale = 1.0" />
+    <title>Document</title>
+
+    <style>
+      #hello {
+        height: 100px;
+        width: 150px;
+        background-color: red;
+        position: absolute;
+        left : 15px;
+        top : 20px
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <div id="hello">Hello</div>
+
+    <script>
+
+        const divElement = document.querySelector('#hello')
+        const results = divElement.getBoundingClientRect()
+        console.log(results)
+      
+    </script>
+  </body>
+</html>
