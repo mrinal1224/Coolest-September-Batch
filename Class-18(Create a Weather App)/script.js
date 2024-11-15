@@ -13,3 +13,9 @@ const objVal = JSON.parse(jsonData)
 console.log(toys)
 console.log(jsonData)
 console.log(objVal)
+
+const age = 23
+
+let str = `My age is ${age}`
+
+console.log(str)
