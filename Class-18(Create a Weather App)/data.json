@@ -1,0 +1,5 @@
+{
+  "toy1": { "name": "Teddy Bear", "color": "Brown" , "price":2000 },
+  "toy2": { "name": "Race Car", "color": "Red" },
+  "toy3": { "name": "Doll", "color": "Pink" }
+}
