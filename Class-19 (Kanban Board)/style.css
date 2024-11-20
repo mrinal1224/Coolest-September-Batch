@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+/* Toolbox Designs */
+
 .toolbox-cont{
     background-color:#4b4b4b ;
     height: 5rem;
@@ -16,5 +18,58 @@
     width: 18rem;
     height: 3.5rem;
     margin-left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    
 
 }
+
+.color-box{
+    height: 1.5rem;
+    width: 3rem;
+
+  
+}
+
+.action-btn-cont{
+    background-color:#3d3d3d ;
+    height:3.5rem ;
+    width:8rem ;
+    margin-left: 4rem;
+    display: flex;
+}
+
+.action-btn-cont>*{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+
+}
+
+/*  filter colors */
+
+.lightpink{
+    background-color: lightpink;
+}
+
+.lightblue{
+    background-color: lightblue;
+}
+
+.lightgreen{
+    background-color: lightgreen;
+}
+
+.black{
+    background-color: black;
+}
+
+
+
+
