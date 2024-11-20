@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.toolbox-cont{
+    background-color:#4b4b4b ;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.toolbox-filter-colors{
+    background-color:#3d3d3d ;
+    width: 18rem;
+    height: 3.5rem;
+    margin-left: 4rem;
+
+}
