@@ -70,6 +70,66 @@
     background-color: black;
 }
 
+ /* modal container */
 
+ .modal-cont{
+   height: 50vh;
+   width: 45vw;
+   display: flex;
+   position: absolute;
+   top:30%;
+   left : 27%;
+
+ }
+
+ .text-area{
+    height: 100%;
+    width: 70%;
+    background-color:#dfe4ea ;
+    resize:none ;
+    border: none;
+    outline: none;
+ }
+
+ .priority-color-cont{
+    height: 100%;
+    background-color:#4b4b4b ;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+ }
+
+ .priority-color{
+    height: 3rem;
+    width: 5rem;
+ }
+
+
+ /* ticket Design */
+
+ .main-cont{
+   display: flex;
+   gap : 2rem;
+   justify-content: center;
+   margin-top: 2rem;
+ }
+
+ .ticket-cont{
+    height: 12rem;
+    width: 15rem;
+    background-color: coral;
+ }
+
+ .ticket-color{
+    background-color: black;
+    height: 1.5rem;
+ }
+
+ .ticket-id{
+    background-color: yellow;
+    height:2rem ;
+ }
 
 
