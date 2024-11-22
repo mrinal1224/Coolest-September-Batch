@@ -124,13 +124,17 @@
  }
 
  .ticket-color{
-    background-color: black;
+
     height: 1.5rem;
  }
 
  .ticket-id{
     background-color: yellow;
     height:2rem ;
+ }
+
+ .active{
+    border: 3px solid red;
  }
 
 
