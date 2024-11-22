@@ -75,7 +75,7 @@
  .modal-cont{
    height: 50vh;
    width: 45vw;
-   display: flex;
+   display: none;
    position: absolute;
    top:30%;
    left : 27%;
@@ -89,6 +89,7 @@
     resize:none ;
     border: none;
     outline: none;
+    font-size: 3rem;
  }
 
  .priority-color-cont{
@@ -131,5 +132,6 @@
     background-color: yellow;
     height:2rem ;
  }
+
 
 
