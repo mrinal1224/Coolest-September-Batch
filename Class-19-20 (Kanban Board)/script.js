@@ -17,11 +17,11 @@ addBtn.addEventListener("click", function () {
 
 // generating a Ticket
 
-function createTicket(task) {
+function createTicket(task , id) {
   const ticketCont = document.createElement("div");
   ticketCont.setAttribute("class", "ticket-cont");
   ticketCont.innerHTML = `<div class="ticket-color"></div>
-          <div class="ticket-id">12345</div>
+          <div class="ticket-id">${id}</div>
           <div class="task-area">${task}</div>
           <div class="ticket-lock"></div>`;
 mainCont.appendChild(ticketCont)
@@ -35,7 +35,8 @@ mainCont.appendChild(ticketCont)
 modalCont.addEventListener("keydown", function (e) {
   if (e.key === "Shift") {
     const task = textArea.value;
-    createTicket(task);
+    const id = (Math.random() * 10000).toFixed(0)
+    createTicket(task , id);
     modalCont.style.display = "none";
     addBtnFlag = false
   }
