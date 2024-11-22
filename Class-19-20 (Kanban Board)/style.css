@@ -1,141 +1,164 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensure consistent box model */
 }
 
 /* Toolbox Designs */
-
-.toolbox-cont{
-    background-color:#4b4b4b ;
+.toolbox-cont {
+    background-color: #4b4b4b;
     height: 5rem;
     display: flex;
     align-items: center;
-
+    padding: 0 2rem; /* Add padding for better spacing */
+    gap: 2rem; /* Ensure even spacing between child elements */
 }
 
-.toolbox-filter-colors{
-    background-color:#3d3d3d ;
+.toolbox-filter-colors {
+    background-color: #3d3d3d;
     width: 18rem;
     height: 3.5rem;
-    margin-left: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
-    
-
+    border-radius: 0.5rem; /* Smooth corners */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add subtle animations */
 }
 
-.color-box{
+.toolbox-filter-colors:hover {
+    background-color: #505050; /* Slightly lighten on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.color-box {
     height: 1.5rem;
     width: 3rem;
-
-  
+    border-radius: 0.25rem; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    transition: transform 0.2s ease; /* Hover animation */
 }
 
-.action-btn-cont{
-    background-color:#3d3d3d ;
-    height:3.5rem ;
-    width:8rem ;
-    margin-left: 4rem;
+.color-box:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
+.action-btn-cont {
+    background-color: #3d3d3d;
+    height: 3.5rem;
+    width: 8rem;
     display: flex;
+    border-radius: 0.5rem; /* Rounded corners */
+    overflow: hidden; /* Ensure buttons don't overflow */
 }
 
-.action-btn-cont>*{
+.action-btn-cont > * {
     display: flex;
     width: 50%;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.8rem; /* Slightly adjust size for better spacing */
     color: white;
     cursor: pointer;
-
+    transition: background-color 0.3s ease; /* Add hover transition */
 }
 
-/*  filter colors */
+.action-btn-cont > *:hover {
+    background-color: #505050; /* Highlight on hover */
+}
 
-.lightpink{
+/* Filter colors */
+.lightpink {
     background-color: lightpink;
 }
 
-.lightblue{
+.lightblue {
     background-color: lightblue;
 }
 
-.lightgreen{
+.lightgreen {
     background-color: lightgreen;
 }
 
-.black{
+.black {
     background-color: black;
 }
 
- /* modal container */
+/* Modal container */
+.modal-cont {
+    height: 50vh;
+    width: 45vw;
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 27%;
+    border-radius: 0.5rem; /* Smooth corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    overflow: hidden; /* Prevent overflow */
+}
 
- .modal-cont{
-   height: 50vh;
-   width: 45vw;
-   display: none;
-   position: absolute;
-   top:30%;
-   left : 27%;
-
- }
-
- .text-area{
+.text-area {
     height: 100%;
     width: 70%;
-    background-color:#dfe4ea ;
-    resize:none ;
+    background-color: #dfe4ea;
+    resize: none;
     border: none;
     outline: none;
-    font-size: 3rem;
- }
+    font-size: 1.5rem; /* Adjust font size */
+    padding: 1rem; /* Add padding for text */
+    line-height: 1.5; /* Improve readability */
+}
 
- .priority-color-cont{
+.priority-color-cont {
     height: 100%;
-    background-color:#4b4b4b ;
+    background-color: #4b4b4b;
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
- }
+    padding: 1rem 0; /* Add padding for spacing */
+}
 
- .priority-color{
+.priority-color {
     height: 3rem;
     width: 5rem;
- }
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
 
+/* Ticket Design */
+.main-cont {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
- /* ticket Design */
-
- .main-cont{
-   display: flex;
-   gap : 2rem;
-   justify-content: center;
-   margin-top: 2rem;
- }
-
- .ticket-cont{
+.ticket-cont {
     height: 12rem;
     width: 15rem;
     background-color: coral;
- }
+    border-radius: 0.5rem; /* Smooth corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    overflow: hidden; /* Prevent content overflow */
+}
 
- .ticket-color{
-
+.ticket-color {
     height: 1.5rem;
- }
+}
 
- .ticket-id{
+.ticket-id {
     background-color: yellow;
-    height:2rem ;
- }
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; /* Highlight ticket ID */
+    font-size: 1rem; /* Adjust text size */
+}
 
- .active{
+.active {
     border: 3px solid red;
- }
-
-
-
+    box-shadow: 0 0 6px red; /* Add glowing effect */
+}
