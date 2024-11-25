@@ -10,10 +10,13 @@ const toolBoxColors = document.querySelectorAll('.color-box')
 
 
 
+
+
 // local variables
 let modalPriorityColor ='lightpink'
 const lockClose = "fa-lock";
 const lockOpen = "fa-lock-open";
+const colors = ['lightpink' , 'lightgreen' , 'lightblue' , 'black']
 
 
 
@@ -49,9 +52,38 @@ toolBoxColors.forEach(function(colorElem){
           ticket.style.display ='none'
         }
       })
-
+     
+  })
+  colorElem.addEventListener('dblclick' , function(){
+    const allTicktes = document.querySelectorAll('.ticket-cont')
+    allTicktes.forEach(function(ticket){
+      ticket.style.display='block'
+    })
   })
 })
+
+
+// Changing Task Priority on colorBand
+function handleColor(ticket){
+  const ticketColorBand = ticket.querySelector('.ticket-color')
+  console.log(ticketColorBand)
+  ticketColorBand.addEventListener('click' , function(){
+    const currentColor = ticketColorBand.style.backgroundColor
+    console.log(currentColor)
+
+    let currentColorIdx = colors.findIndex(function(color){
+      return currentColor === color
+    })
+
+    currentColorIdx++
+
+    const newColorIdx = currentColorIdx % colors.length // 0
+    const newColorBand = colors[newColorIdx]
+    ticketColorBand.style.backgroundColor = newColorBand
+    
+  })
+
+}
 
 
 
@@ -66,6 +98,7 @@ function createTicket(taskColor , task , id) {
           <div class="task-area">${task}</div>
           <div class="ticket-lock"></div>`;
 mainCont.appendChild(ticketCont)
+handleColor(ticketCont)
   
 }
 
