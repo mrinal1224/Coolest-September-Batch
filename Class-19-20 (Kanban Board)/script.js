@@ -1,6 +1,7 @@
 // Selectors
 
 const addBtn = document.querySelector(".add-btn");
+const removeBtn = document.querySelector('.remove-btn')
 const modalCont = document.querySelector(".modal-cont");
 const textArea = document.querySelector(".text-area");
 const mainCont = document.querySelector('.main-cont')
@@ -22,7 +23,10 @@ const colors = ['lightpink' , 'lightgreen' , 'lightblue' , 'black']
 
 
 
+
+
 let addBtnFlag = false;
+let removeBtnFlag = false
 
 addBtn.addEventListener("click", function () {
   addBtnFlag = !addBtnFlag;
@@ -33,6 +37,29 @@ addBtn.addEventListener("click", function () {
     modalCont.style.display = "none";
   }
 });
+
+// Remove Btn Toggle
+
+removeBtn.addEventListener('click' , function(){
+  removeBtnFlag = !removeBtnFlag
+  if(removeBtnFlag){
+    alert("Delete Button Activated")
+    removeBtn.style.color = 'red'
+  }
+  else{
+    removeBtn.style.color = 'white'
+  }
+})
+
+// handleRemoval
+
+function handleRemoval(ticket){
+   ticket.addEventListener('click' , function(){
+    if(removeBtnFlag==true){
+      ticket.remove()
+    } 
+   })
+}
 
 // Filtering of tickets according to Color
 toolBoxColors.forEach(function(colorElem){
@@ -110,6 +137,10 @@ function handleLock(ticket){
  
 }
 
+// removal of tickets
+
+
+
 
 
 
@@ -127,6 +158,7 @@ function createTicket(taskColor , task , id) {
 mainCont.appendChild(ticketCont)
 handleColor(ticketCont)
 handleLock(ticketCont)
+handleRemoval(ticketCont)
   
 }
 
