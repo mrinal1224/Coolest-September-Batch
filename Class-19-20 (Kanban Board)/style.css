@@ -158,6 +158,14 @@
     font-size: 1rem; /* Adjust text size */
 }
 
+.ticket-lock{
+    display: flex ;
+    justify-content: flex-end;
+    margin-top:90px;
+    margin-right:5px;
+    font-size:1.5rem;
+}
+
 .active {
     border: 3px solid red;
     box-shadow: 0 0 6px red; /* Add glowing effect */

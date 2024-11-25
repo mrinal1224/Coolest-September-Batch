@@ -69,20 +69,45 @@ function handleColor(ticket){
   console.log(ticketColorBand)
   ticketColorBand.addEventListener('click' , function(){
     const currentColor = ticketColorBand.style.backgroundColor
-    console.log(currentColor)
+    console.log(currentColor) // lightpink
 
     let currentColorIdx = colors.findIndex(function(color){
       return currentColor === color
-    })
+    }) // 0
 
-    currentColorIdx++
+    currentColorIdx++ // 1
 
-    const newColorIdx = currentColorIdx % colors.length // 0
+    const newColorIdx = currentColorIdx % colors.length // 1
     const newColorBand = colors[newColorIdx]
     ticketColorBand.style.backgroundColor = newColorBand
     
   })
 
+}
+
+function handleLock(ticket){
+  const ticketLockElem = ticket.querySelector('.ticket-lock')
+    const ticketLockIcon = ticketLockElem.children[0]
+    const taskArea = ticket.querySelector('.task-area')
+    console.log(ticketLockIcon)
+
+    ticketLockIcon.addEventListener('click' , function(){
+      if(ticketLockIcon.classList.contains(lockClose)){
+        ticketLockIcon.classList.remove(lockClose)
+        ticketLockIcon.classList.add(lockOpen)
+        taskArea.setAttribute('contenteditable' , 'true')
+
+      }
+      else{
+        ticketLockIcon.classList.remove(lockOpen)
+        ticketLockIcon.classList.add(lockClose)
+        taskArea.setAttribute('contenteditable' , 'false')
+      }
+    })
+
+
+
+ 
 }
 
 
@@ -96,9 +121,12 @@ function createTicket(taskColor , task , id) {
   ticketCont.innerHTML = ` <div class="ticket-color" style="background-color:${taskColor}"></div>
           <div class="ticket-id">${id}</div>
           <div class="task-area">${task}</div>
-          <div class="ticket-lock"></div>`;
+          <div class="ticket-lock">
+          <i class="fa-solid fa-lock"></i>
+          </div>`;
 mainCont.appendChild(ticketCont)
 handleColor(ticketCont)
+handleLock(ticketCont)
   
 }
 
