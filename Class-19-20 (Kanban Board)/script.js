@@ -9,7 +9,7 @@ const allPriorityColors = document.querySelectorAll('.priority-color')
 const toolBoxColors = document.querySelectorAll('.color-box')
 let ticketsArr = JSON.parse(localStorage.getItem('tickets'))||[]
 
-
+// Init function which runs on every refresh to get the tickets form local storage
 function init(){
   if(localStorage.getItem('tickets')){
       ticketsArr.forEach(function(ticket){
