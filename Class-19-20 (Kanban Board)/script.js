@@ -7,10 +7,18 @@ const textArea = document.querySelector(".text-area");
 const mainCont = document.querySelector('.main-cont')
 const allPriorityColors = document.querySelectorAll('.priority-color')
 const toolBoxColors = document.querySelectorAll('.color-box')
+let ticketsArr = JSON.parse(localStorage.getItem('tickets'))||[]
 
 
+function init(){
+  if(localStorage.getItem('tickets')){
+      ticketsArr.forEach(function(ticket){
+        createTicket(ticket.ticketColor , ticket.task , ticket.id)
+      })
+  }
+}
 
-
+init()
 
 
 // local variables
@@ -174,8 +182,12 @@ modalCont.addEventListener("keydown", function (e) {
     createTicket(modalPriorityColor, task , id);
     modalCont.style.display = "none";
     addBtnFlag = false
+    ticketsArr.push({id ,task , ticketColor : modalPriorityColor })
+    updateLocalStorage()
   }
 });
+
+
 
 allPriorityColors.forEach(function(colorElem){
     colorElem.addEventListener('click', function(){
@@ -191,6 +203,13 @@ allPriorityColors.forEach(function(colorElem){
 
 
     })
+
+
+   
 })
+
+function updateLocalStorage(){
+  localStorage.setItem('tickets' , JSON.stringify(ticketsArr))
+}
 
 
