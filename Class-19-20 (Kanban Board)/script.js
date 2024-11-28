@@ -63,8 +63,19 @@ removeBtn.addEventListener('click' , function(){
 
 function handleRemoval(ticket){
    ticket.addEventListener('click' , function(){
+   
     if(removeBtnFlag==true){
+
+      const id = ticket.querySelector('.ticket-id').innerText
+      const ticketIdx = getIdx(id)
+
+      const deletedItem = ticketsArr.splice(ticketIdx , 1)
+      console.log(deletedItem)
+
+
+      updateLocalStorage()
       ticket.remove()
+     
     } 
    })
 }
@@ -126,14 +137,16 @@ function handleColor(ticket){
   })
 
 }
-
+// Handle Lock
 function handleLock(ticket){
   const ticketLockElem = ticket.querySelector('.ticket-lock')
+  const id = ticket.querySelector('.ticket-id').innerText
     const ticketLockIcon = ticketLockElem.children[0]
     const taskArea = ticket.querySelector('.task-area')
     console.log(ticketLockIcon)
 
     ticketLockIcon.addEventListener('click' , function(){
+      const ticketIdx = getIdx(id)
       if(ticketLockIcon.classList.contains(lockClose)){
         ticketLockIcon.classList.remove(lockClose)
         ticketLockIcon.classList.add(lockOpen)
@@ -145,6 +158,9 @@ function handleLock(ticket){
         ticketLockIcon.classList.add(lockClose)
         taskArea.setAttribute('contenteditable' , 'false')
       }
+
+      ticketsArr[ticketIdx].task = taskArea.innerText
+      updateLocalStorage()
     })
 
 
