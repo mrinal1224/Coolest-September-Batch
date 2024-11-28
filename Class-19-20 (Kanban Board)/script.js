@@ -101,11 +101,15 @@ toolBoxColors.forEach(function(colorElem){
 // Changing Task Priority on colorBand
 function handleColor(ticket){
   const ticketColorBand = ticket.querySelector('.ticket-color')
+  const id = ticket.querySelector('.ticket-id').innerText
+ 
   console.log(ticketColorBand)
   ticketColorBand.addEventListener('click' , function(){
     const currentColor = ticketColorBand.style.backgroundColor
     console.log(currentColor) // lightpink
-
+      const ticketIdx = getIdx(id) // 2
+  
+      
     let currentColorIdx = colors.findIndex(function(color){
       return currentColor === color
     }) // 0
@@ -115,6 +119,9 @@ function handleColor(ticket){
     const newColorIdx = currentColorIdx % colors.length // 1
     const newColorBand = colors[newColorIdx]
     ticketColorBand.style.backgroundColor = newColorBand
+    ticketsArr[ticketIdx].ticketColor = newColorBand
+
+    updateLocalStorage()
     
   })
 
@@ -210,6 +217,14 @@ allPriorityColors.forEach(function(colorElem){
 
 function updateLocalStorage(){
   localStorage.setItem('tickets' , JSON.stringify(ticketsArr))
+}
+
+function getIdx(id){
+   const ticketIdx = ticketsArr.findIndex(function(ticket){
+      return ticket.id === id
+   })
+  return ticketIdx
+
 }
 
 
