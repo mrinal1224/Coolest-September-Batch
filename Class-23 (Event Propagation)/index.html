@@ -37,27 +37,32 @@
     //useCapture
     const child = document.querySelector("#child");
 
-    child.addEventListener("click", function () {
+    child.addEventListener("click", function (e) {
       console.log("Child Clicked");
+      e.stopPropagation()
+
     });
 
     const parent = document.querySelector("#parent");
 
     parent.addEventListener("click", function () {
       console.log("Parent Clicked");
-    } , true);
+     
+    } , true); // stop propagating
 
     const grandParent = document.querySelector("#grandParent");
 
-    grandParent.addEventListener("click", function () {
+    grandParent.addEventListener("click", function (e) {
       console.log("Grand Parent Clicked");
-    } , true);
+   
+    }, true);
 
 
     const bodyEle = document.querySelector('body')
 
     bodyEle.addEventListener('click', function(){
         console.log('HTMl Body Clicked')
-    } , true)
+      
+    })
   </script>
 </html>
