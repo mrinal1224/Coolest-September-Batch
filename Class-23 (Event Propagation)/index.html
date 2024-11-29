@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grandParent {
+        background-color: red;
+        height: 100px;
+        width: 100px;
+      }
+      #parent {
+        background-color: green;
+        height: 75px;
+        width: 75px;
+      }
+      #child {
+        background-color: blue;
+        height: 50px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grandParent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+
+  
+  </body>
+
+  <script>
+
+    //useCapture
+    const child = document.querySelector("#child");
+
+    child.addEventListener("click", function () {
+      console.log("Child Clicked");
+    });
+
+    const parent = document.querySelector("#parent");
+
+    parent.addEventListener("click", function () {
+      console.log("Parent Clicked");
+    } , true);
+
+    const grandParent = document.querySelector("#grandParent");
+
+    grandParent.addEventListener("click", function () {
+      console.log("Grand Parent Clicked");
+    } , true);
+
+
+    const bodyEle = document.querySelector('body')
+
+    bodyEle.addEventListener('click', function(){
+        console.log('HTMl Body Clicked')
+    } , true)
+  </script>
+</html>
