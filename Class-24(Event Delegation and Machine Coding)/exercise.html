@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+        .color-box{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
   </head>
   <body>
     <div id="colorPalette">
@@ -12,4 +19,15 @@
       <div class="color-box" style="background-color: blue"></div>
     </div>
   </body>
+
+  <script>
+
+    const colorPalette = document.querySelector('#colorPalette')
+    const body = document.querySelector('body')
+
+    colorPalette.addEventListener('click' , function(e){
+        const color =  e.target.style.backgroundColor
+        body.style.backgroundColor = color
+    })
+  </script>
 </html>
