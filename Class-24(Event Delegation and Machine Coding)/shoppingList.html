@@ -1,17 +1,35 @@
-<div id="categories">
-    <div class="category" id="headphones">
-      <h2>Headphones</h2>
-      <div class="product">Bose Headphone</div>
-      <div class="product">Sony 2</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="categories">
+      <div class="category" id="headphones">
+        <h2>Headphones</h2>
+        <div class="product">Bose Headphone</div>
+        <div class="product">Sony 2</div>
+      </div>
+      <div class="category" id="laptops">
+        <h2>Laptops</h2>
+        <div class="product">Macbook Air</div>
+        <div class="product">Macbook Pro</div>
+      </div>
+      <div class="category" id="mobiles">
+        <h2>Mobiles</h2>
+        <div class="product">Iphone 13</div>
+        <div class="product">Iphone 15</div>
+      </div>
     </div>
-    <div class="category" id="laptops">
-      <h2>Laptops</h2>
-      <div class="product">Macbook Air</div>
-      <div class="product">Macbook Pro</div>
-    </div>
-    <div class="category" id="mobiles">
-      <h2>Mobiles</h2>
-      <div class="product">Iphone 13 </div>
-      <div class="product">Iphone 15</div>
-    </div>
-  </div>
+  </body>
+
+  <script>
+    const categories = document.querySelector("#categories");
+    categories.addEventListener("click", function (e) {
+      console.log(e.target.parentElement.querySelector('h2').innerText)
+    });
+  </script>
+</html>
+ // product -> category -> categories

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: darkblue;
+      }
+      #G1 {
+        background-color: aqua;
+        color: brown;
+        width: 400px;
+        height: 400px;
+      }
+      #G2 {
+        background-color: blueviolet;
+        color: black;
+        width: 300px;
+        height: 300px;
+      }
+      #G3 {
+        background-color: darkgreen;
+        color: white;
+        width: 200px;
+        height: 200px;
+      }
+      #G4 {
+        background-color: darkorange;
+        color: red;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Propagation Lifecycle Demo</h1>
+    <div id="G1"> Generation1
+      <div id="G2">Generation2
+        <div id="G3">Generation3
+          <div id="G4">Generation 4</div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const g1 = document.querySelector("#G1");
+
+    g1.addEventListener("click", function (e) {
+      console.log(e.target.id);
+    });
+  </script>
+</html>
