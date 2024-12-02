@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Without Event Delegation</title>
-</head>
-<body>
-  <div id="button-container">
-    <!-- 100 Buttons -->
-    <button id="btn-1">Button 1</button>
-    <button id="btn-2">Button 2</button>
-    <button id="btn-3">Button 3</button>
-    <!-- More buttons up to 100 -->
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Without Event Delegation</title>
+  </head>
+  <body>
+    <div id="button-container">
+      <button id="btn-1">Button 1</button>
+      <button id="btn-2">Button 2</button>
+      <button id="btn-3">Button 3</button>
+    </div>
 
-  <script>
+    <script>
+    //   const btn1 = document.querySelector("#btn-1");
+    //   const btn2 = document.querySelector("#btn-2");
+    //   const btn3 = document.querySelector("#btn-3");
+
+    //   btn1.addEventListener("click", function () {
+    //     console.log(`${btn1.innerText} clicked`);
+    //   });
+
+    //   btn2.addEventListener("click", function () {
+    //     console.log(`${btn2.innerText} clicked`);
+    //   });
+
+    //   btn3.addEventListener("click", function () {
+    //     console.log(`${btn3.innerText} clicked`);
+    //   });
 
 
-  </script>
-</body>
+    // attach a loop 
+
+    // const buttons = document.querySelectorAll('#button-container button')
+
+    // buttons.forEach(function(button){
+    //     button.addEventListener('click' , function(e){
+    //       console.log(e.target.innerText)
+    //     })
+    // })
+
+
+
+    const parentContainer = document.querySelector('#button-container')
+
+
+    parentContainer.addEventListener('click' , function(e){
+        console.log(`${e.target.innerText} clicked`)
+    })
+
+
+    </script>
+  </body>
 </html>
