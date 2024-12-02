@@ -13,43 +13,37 @@
     </div>
 
     <script>
-    //   const btn1 = document.querySelector("#btn-1");
-    //   const btn2 = document.querySelector("#btn-2");
-    //   const btn3 = document.querySelector("#btn-3");
+      //   const btn1 = document.querySelector("#btn-1");
+      //   const btn2 = document.querySelector("#btn-2");
+      //   const btn3 = document.querySelector("#btn-3");
 
-    //   btn1.addEventListener("click", function () {
-    //     console.log(`${btn1.innerText} clicked`);
-    //   });
+      //   btn1.addEventListener("click", function () {
+      //     console.log(`${btn1.innerText} clicked`);
+      //   });
 
-    //   btn2.addEventListener("click", function () {
-    //     console.log(`${btn2.innerText} clicked`);
-    //   });
+      //   btn2.addEventListener("click", function () {
+      //     console.log(`${btn2.innerText} clicked`);
+      //   });
 
-    //   btn3.addEventListener("click", function () {
-    //     console.log(`${btn3.innerText} clicked`);
-    //   });
+      //   btn3.addEventListener("click", function () {
+      //     console.log(`${btn3.innerText} clicked`);
+      //   });
 
+      // attach a loop
 
-    // attach a loop 
+      // const buttons = document.querySelectorAll('#button-container button')
 
-    // const buttons = document.querySelectorAll('#button-container button')
+      // buttons.forEach(function(button){
+      //     button.addEventListener('click' , function(e){
+      //       console.log(e.target.innerText)
+      //     })
+      // })
 
-    // buttons.forEach(function(button){
-    //     button.addEventListener('click' , function(e){
-    //       console.log(e.target.innerText)
-    //     })
-    // })
+      const parentContainer = document.querySelector("#button-container");
 
-
-
-    const parentContainer = document.querySelector('#button-container')
-
-
-    parentContainer.addEventListener('click' , function(e){
-        console.log(`${e.target.innerText} clicked`)
-    })
-
-
+      parentContainer.addEventListener("click", function (e) {
+        console.log(e);
+      });
     </script>
   </body>
 </html>
