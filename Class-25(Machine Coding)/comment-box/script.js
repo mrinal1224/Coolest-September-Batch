@@ -8,6 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
     addComment(commentText);
   });
 
+  // event delegation for the commentContainer to make the reply btn work
+
+  commentContainer.addEventListener('click' , function(e){
+    if(e.target.className.includes('replyBtn')){
+        const parentComment = e.target.parentElement
+        const replyInput = parentComment.querySelector('.replyInput')
+        const replyText = replyInput.value
+        addReply(parentComment , replyText)
+    }
+  })
+
   function addComment(text) {
     const commentElement = document.createElement("div");
 
@@ -17,6 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
         <button class="replyBtn">Reply</button>
         <textArea class="replyInput" placeholder="Write a reply ..."></textArea>`;
     commentContainer.appendChild(commentElement)  
+  }
+
+
+  function addReply(parentComment , text){
+     const replyElement = document.createElement('div')
+
+     replyElement.className = 'repliesContainer'
+
+     replyElement.innerHTML = `<p>${text}</p>`
+
+     parentComment.appendChild(replyElement)
   }
 
 
