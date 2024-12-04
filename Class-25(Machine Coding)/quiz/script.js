@@ -17,7 +17,7 @@ quizForm.addEventListener("submit", function (e) {
     quizForm.q3.value, 
     quizForm.q4.value, 
     quizForm.q5.value, 
-  ];
+  ]; // how to not use an array over here 
 
   userAnswers.forEach(function(answer , index){
   if(answer===correctAnswer[index]){
