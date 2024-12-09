@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Simulation call with setTimeout</title>
+</head>
+<body>
+
+    <input type="text" id="searchInput" placeholder="search">
+
+    <script>
+
+        let result;
+
+        function searchAPI(query){
+            console.log(`API called with ${query}`)
+        }
+
+        const searchInput = document.querySelector('#searchInput')
+
+        searchInput.addEventListener('input' , function(e){
+           const query = e.target.value
+           console.log(query)
+           
+        //     result = setTimeout(function(){
+        //      console.log("Timer Done!") 
+        //    } , 1000)
+
+        //    console.log(result)
+        })

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Simulation call</title>
+</head>
+<body>
+
+    <input type="text" id="searchInput" placeholder="search">
+
+    <script>
+
+        
+
+        function searchAPI(query){
+            console.log(`API called with ${query}`)
+        }
+
+        const searchInput = document.querySelector('#searchInput')
+
+         function debounce(fn , delay){
+             let timerID // undefined -fali1ed// 2 - fails
+
+
+             return function(event){
+                const query = event.target.value
+
+               console.log(timerID) // 4 - 10 sec
+               clearTimeout(timerID)
+
+                timerID = setTimeout(function(){
+                         fn(query) 
+                } , delay)
+             }
+         }
+
+
+        const debouncedSearchApi = debounce(searchAPI , 10000)
+
+        searchInput.addEventListener('input' , debouncedSearchApi)
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
