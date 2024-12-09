@@ -3,50 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Simulation call</title>
+    <title>Debounce for Beginners</title>
 </head>
 <body>
 
-    <input type="text" id="searchInput" placeholder="search">
+<input type="text" id="searchInput" placeholder="Type to search..." />
 
-    <script>
+<script>
+    // 1️⃣ This function simulates an API call (like searching a database or an external API)
+    function searchAPI(query) {
+        console.log(`API called with query: "${query}"`);
+    }
 
+    // 2️⃣ This is the debounce function (simple version)
+    function debounce(fn, delay) {
+        let timerId; // This will store the timer ID
         
 
-        function searchAPI(query){
-            console.log(`API called with ${query}`)
-        }
+        // This function is returned and will be called whenever we type
+        return function(event) {
+            const query = event.target.value; // Get the input value
+            clearTimeout(timerId); // Clear the previous timer
+            timerId = setTimeout(function() {
+                fn(query); // Call the function after the delay
+            }, delay);
+        };
+    }
 
-        const searchInput = document.querySelector('#searchInput')
+    // 3️⃣ Create a debounced version of the searchAPI with a delay of 500ms
+    const debouncedSearchAPI = debounce(searchAPI, 500);
 
-         function debounce(fn , delay){
-             let timerID=0
+    // 4️⃣ Attach the debounced function to the input field
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', debouncedSearchAPI);
+</script>
 
-
-             return function(event){
-                const query = event.target.value
-
-               console.log(timerID) // 4 - 10 sec
-               clearTimeout(timerID)
-
-                timerID = setTimeout(function(){
-                         fn(query) 
-                } , delay)
-             }
-         }
-
-
-        const debouncedSearchApi = debounce(searchAPI , 10000)
-
-        searchInput.addEventListener('input' , debouncedSearchApi)
-
-
-
-
-
-
-
-    </script>
-    
 </body>
 </html>
