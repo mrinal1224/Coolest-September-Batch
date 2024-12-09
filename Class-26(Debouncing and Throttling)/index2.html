@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling Example</title>
+</head>
+<body>
+    <h1>Without Throttling</h1>
+    <button id="clickMe">Click Me!</button>
+
+    <script>
+        const button = document.getElementById('clickMe');
+
+        function handleClick() {
+            console.log('Button Clicked ');
+        }
+
+        // Attach click event
+        button.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>

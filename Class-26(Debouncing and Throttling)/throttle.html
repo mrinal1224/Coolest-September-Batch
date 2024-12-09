@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling Example</title>
+</head>
+<body>
+    <h1>Throttling</h1>
+    <button id="clickMe">Click Me!</button>
+
+    <script>
+        const button = document.getElementById('clickMe');
+
+        function handleClick() {
+            console.log('Button Clicked ');
+        }
+
+        function throttle(fn , delay){
+            let canRun = true
+
+            return function(){
+                if(canRun){
+                    fn() // handleClick , run the function
+                    canRun = false // lock the function
+ 
+                    setTimeout(function(){
+                        canRun = true // unlocked function
+                    } , delay)
+
+                }
+            }
+
+           
+        }
+
+        const throttledClick = throttle(handleClick , 9000)
+
+        // Attach click event
+        button.addEventListener('click', throttledClick);
+    </script>
+</body>
+</html>
