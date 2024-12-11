@@ -1,27 +1,24 @@
-// non-strict mode - Browser
+'use strict'
 
-console.log(this) // 1.globally
+// 1. global case
 
-// 2. functions 
+console.log(this) // window
 
 function getValue(){
     console.log(this)
 }
 
-getValue() // 2. functions
+getValue() // undefined
 
 
 let obj1 = {
     name : 'Adam',
     age : 24,
-    fn1 : function(){
+
+    fn : function(){
         console.log(this)
     }
-
-} // 3.using it inside obj with a method
-
-obj1.fn1()
-
+}
 
 let obj2 = {
     name : 'Adam',
@@ -30,13 +27,9 @@ let obj2 = {
          function fn2(){
             console.log(this)
          }
-         fn2()
+          fn2()
     }
 
-} // 4. function inside a method
+} 
 
 obj2.fn1()
-
-
-
-
