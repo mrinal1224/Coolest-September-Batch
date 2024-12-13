@@ -20,6 +20,8 @@ let obj1 = {
     }
 }
 
+obj1.fn()
+
 let obj2 = {
     name : 'Adam',
     age : 24,
