@@ -3,7 +3,7 @@ function Pizaa(Toppings , Crust , Size){
     this.crust = Crust,
     this.size = Size
 
-    console.log(`A Pizza with ${this.toppings.join(',')} and ${this.crust} crust and the size is ${this.size}`)
+    console.log(`A Pizza with ${this.toppings.join(', ')} and ${this.crust} crust and the size is ${this.size}`)
 }
 
 
@@ -17,6 +17,4 @@ console.log(pizza1)
 console.log(pizza2)
 
 
-// Create a constructor function for Cars
-// and the properties should be , Brand , name , Color , TopSpeed
 
