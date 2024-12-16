@@ -6,9 +6,27 @@ function Car(Brand , Model , Year){
     
 }
 
-Car.prototype.displayInfo = function(){
+function Animal(Name , Type){
+   this.name = Name
+   this.type = Type
+}
+
+Animal.prototype
+
+
+let animal1 = new Animal('Lion' , 'Carnivore')
+
+
+
+console.log(animal1)
+
+Car.prototype.__proto__.displayInfo = function(){
     return `This is a ${this.brand} ${this.model} ${this.year}.`; 
 }
+
+console.log(animal1.displayInfo())
+
+// console.log(Car.prototype.__proto__.__proto__) null
 
 
 let car1 = new Car('Mercedes' , 'S-class', '2016')
@@ -23,6 +41,9 @@ console.log(car4)
 
 console.log(car1.displayInfo())
 console.log(car2.displayInfo())
+
+let doesExist = car1.hasOwnProperty('brand')
+console.log(doesExist)
 
 
 
