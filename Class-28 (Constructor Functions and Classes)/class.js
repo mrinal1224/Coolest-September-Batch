@@ -54,13 +54,13 @@ const car4 = new Car('Ferrai' , 'GT' , 'blue' , '200KM/hr')
 const evCar1 = new ElectricCar('Tesla' , 'Model-S' , 'White' , '350KM/hr' , '100' , '3hrs')
 
 
-// console.log(car1)
+ console.log(car1)
 // console.log(car2)
 // console.log(car3)
 // console.log(car4)
 
-// console.log(evCar1)
-Car.compareSpeed(car1 , car2)
+ console.log(evCar1)
+// Car.compareSpeed(car1 , car2)
 
 
 // car1.drive()
