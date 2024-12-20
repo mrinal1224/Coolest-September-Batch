@@ -16,17 +16,17 @@ Array.prototype.myMap = function (callback) {
   //   console.log("This is your array  " + this)
 
   for (let i = 0; i < this.length; i++) {
-    resultantArray.push(callback(this[i]));
+    resultantArray.push(callback(this[i] , i));
   }
 
   return resultantArray;
 };
 
-let sqaured = nums.myMap(function(num){
-    return num*num
+let sqaured = nums.myMap(function(num ,index){
+    return (num*num ,index)
 }); // nums array
 
-let cubes = nums.myMap(function(num){
+let cubes = nums.myMap(function(num , index){
     return num*num*num
 })
 
