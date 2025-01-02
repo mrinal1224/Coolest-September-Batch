@@ -1,6 +1,6 @@
 function quickResolve() {
   return new Promise((resolve, reject) => {
-    setTimeout(() => reject("Quickly rejected"), 5000);
+    setTimeout(() => reject("Quickly rejected"), 1000);
   });
 }
 
