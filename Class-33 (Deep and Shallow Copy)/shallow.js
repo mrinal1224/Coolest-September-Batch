@@ -47,7 +47,7 @@ deepCopyZoo.animals[1].species = "Elephant"
 console.log(zoo2===zoo1) // true
 console.log(zoo1shallowCopy === zoo1) // false
 console.log(zoo1.animals === zoo1shallowCopy.animals) // true
-console.log(zoo1 === deepCopyZoo) // false
+console.log( zoo1 ===  deepCopyZoo) // false
 console.log(zoo1.animals === deepCopyZoo.animals) // false
 
 console.log(zoo1)
