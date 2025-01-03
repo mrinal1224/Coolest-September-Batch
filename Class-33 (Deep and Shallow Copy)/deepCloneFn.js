@@ -3,12 +3,12 @@ let person1 = {
   details: {
     age: 30,
     gender: "Female",
-    hobbies : ['Swimming' , 'Dancing' , 'Basketball']
+    hobbies: ["Swimming", "Dancing", "Basketball"],
   },
 
-  greet : function(){
-    console.log("Hi")
-  }
+  greet: function () {
+    console.log("Hi");
+  },
 };
 
 function deepClone(input) {
@@ -17,6 +17,21 @@ function deepClone(input) {
   if (typeof input !== "object") {
     return input;
   }
+
+  // handling arrays
+
+  if (Array.isArray(input)) {
+    const cloneArray = [];
+    for (let i = 0; i < input.length; i++) {
+      cloneArray[i] = deepClone(input[i]); // Recursively clone array elements
+    }
+    return cloneArray;
+  }
+
+  // handling methods
+//    bind
+
+
 
   let clone = {};
 
@@ -31,12 +46,6 @@ function deepClone(input) {
 
 const deepCopyPerson1 = deepClone(person1);
 
-deepCopyPerson1.name = 'Mark'
-deepCopyPerson1.details.gender = 'Male'
+console.log(person1);
 
-console.log(person1)
-
-console.log(deepCopyPerson1)
-
-
-
+console.log(deepCopyPerson1);

@@ -3,8 +3,9 @@ const person1 = {
     age : 23
 }
 
-person1.name = 'Steve'
+let arr = [1 ,2 ,3]
 
-console.log(person1)
-
-person1 = 'Hello'
+console.log(typeof arr)
+console.log(typeof person1)
+let isArray = Array.isArray(arr)
+console.log(isArray)
