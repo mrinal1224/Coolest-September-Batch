@@ -14,7 +14,7 @@ function fetchUserPosts() {
 
 // 1   .all
 
-Promise.all([fetchUserData() , fetchUserPosts()  ])
+Promise.all([fetchUserData() , fetchUserPosts()])
   .then((results) => {
     console.log("User Data -> ", results[0]);
     console.log("User Posts -> ", results[1]);
