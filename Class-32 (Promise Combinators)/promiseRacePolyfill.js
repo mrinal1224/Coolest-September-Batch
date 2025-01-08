@@ -1,2 +1,4 @@
-// polyfill for promise.all
+// polyfill for promise.race
+
+
 
