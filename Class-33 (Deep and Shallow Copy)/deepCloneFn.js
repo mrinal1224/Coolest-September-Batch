@@ -29,7 +29,7 @@ function deepClone(input) {
   }
 
   // handling methods
-//    bind
+//    bind , Homework
 
 
 
@@ -47,5 +47,9 @@ function deepClone(input) {
 const deepCopyPerson1 = deepClone(person1);
 
 console.log(person1);
+
+
+
+deepCopyPerson1.details.hobbies.push('Football')
 
 console.log(deepCopyPerson1);
