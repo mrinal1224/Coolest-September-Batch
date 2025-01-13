@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--  write a JS Script which will append hello from JS to the page -->
+
+    <script>
+      // const headingElement = document.createElement('h1')
+      // headingElement.innerText= "Hello From JS"
+
+      // const root = document.querySelector('#root')
+      // root.appendChild(headingElement)
+
+
+      //   <!--  write a JS Script which will append hello from React to the page -->
+      
+      const rootElement = document.getElementById('root')
+
+
+      // Create an element with React's CreateElement
+
+      // 1. The tag name of the HTML element to create
+      // 2. The properties of the element (or null if none) Adding null here for now we will discuss props later
+     // 3. The children of this element (or text content)
+
+      const headingElement = React.createElement('h1' , null , 'Hello from React')
+      console.log(headingElement)
+
+      // Render the element to the DOM with using ReactDOM
+
+      ReactDOM.render(headingElement , rootElement)
+
+
+
+
+    </script>
+  </body>
+</html>
