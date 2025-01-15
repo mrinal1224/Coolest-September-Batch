@@ -444,6 +444,285 @@ Do you see any mistake here?
         ReactDOM.render(<List></List>, document.getElementById("root"));
     </script>
 ```
+JSX (JavaScript XML) is a syntax extension for JavaScript commonly used with React to describe UI components. While it looks like HTML, it has its own set of rules and nuances. Here’s a comprehensive list of JSX rules:
+
+---
+
+### **1. JSX Elements Must Be Wrapped in a Parent Element**
+JSX requires all elements to have a single enclosing parent element.
+
+✅ **Correct:**
+```jsx
+return (
+  <div>
+    <h1>Hello</h1>
+    <p>World</p>
+  </div>
+);
+```
+
+❌ **Incorrect:**
+```jsx
+return (
+  <h1>Hello</h1>
+  <p>World</p>
+);
+```
+
+If you don’t want to add an extra `div`, you can use a **React Fragment**:
+```jsx
+return (
+  <>
+    <h1>Hello</h1>
+    <p>World</p>
+  </>
+);
+```
+
+---
+
+### **2. JSX Tags Must Be Properly Closed**
+All tags must be self-closing if they don’t have children.
+
+✅ **Correct:**
+```jsx
+<img src="image.jpg" alt="description" />
+<br />
+```
+
+❌ **Incorrect:**
+```jsx
+<img src="image.jpg" alt="description">
+<br>
+```
+
+---
+
+### **3. JSX Attribute Names Use CamelCase**
+Attributes follow camelCase naming conventions instead of HTML-style names.
+
+✅ **Correct:**
+```jsx
+<div className="container"></div>
+<input type="text" defaultValue="John" />
+```
+
+❌ **Incorrect:**
+```jsx
+<div class="container"></div>
+<input type="text" defaultvalue="John" />
+```
+
+---
+
+### **4. JSX Values Are Passed Using Curly Braces**
+For dynamic values, use curly braces `{}` inside JSX.
+
+✅ **Correct:**
+```jsx
+const title = "Welcome";
+<h1>{title}</h1>
+```
+
+❌ **Incorrect:**
+```jsx
+const title = "Welcome";
+<h1>title</h1>
+```
+
+---
+
+### **5. JavaScript Expressions Are Allowed in JSX**
+You can include JavaScript expressions inside `{}` but not statements.
+
+✅ **Correct:**
+```jsx
+<h1>{1 + 1}</h1>
+```
+
+❌ **Incorrect:**
+```jsx
+<h1>{if (true) { return 'Hello'; }}</h1>
+```
+
+---
+
+### **6. Use `className` Instead of `class`**
+Since `class` is a reserved keyword in JavaScript, JSX uses `className`.
+
+✅ **Correct:**
+```jsx
+<div className="button"></div>
+```
+
+❌ **Incorrect:**
+```jsx
+<div class="button"></div>
+```
+
+---
+
+### **7. `style` Attribute Accepts an Object**
+Inline styles in JSX are specified as an object, with keys in camelCase.
+
+✅ **Correct:**
+```jsx
+<div style={{ color: 'red', fontSize: '20px' }}></div>
+```
+
+❌ **Incorrect:**
+```jsx
+<div style="color: red; font-size: 20px;"></div>
+```
+
+---
+
+### **8. Reserved Words Must Be Escaped**
+Some HTML attributes or values are reserved words in JavaScript and require escaping.
+
+✅ **Correct:**
+```jsx
+<label htmlFor="name">Name</label>
+```
+
+❌ **Incorrect:**
+```jsx
+<label for="name">Name</label>
+```
+
+---
+
+### **9. Comments in JSX Use Curly Braces**
+To add comments in JSX, wrap them inside `{}`.
+
+✅ **Correct:**
+```jsx
+return (
+  <div>
+    {/* This is a comment */}
+    <h1>Hello</h1>
+  </div>
+);
+```
+
+❌ **Incorrect:**
+```jsx
+return (
+  <div>
+    // This is a comment
+    <h1>Hello</h1>
+  </div>
+);
+```
+
+---
+
+### **10. Conditional Rendering Uses Ternary or Logical Operators**
+Use expressions like ternary operators or `&&` for conditional rendering.
+
+✅ **Correct:**
+```jsx
+<h1>{isLoggedIn ? 'Welcome Back!' : 'Please Log In'}</h1>
+{isAdmin && <button>Delete</button>}
+```
+
+❌ **Incorrect:**
+```jsx
+if (isLoggedIn) {
+  <h1>Welcome Back!</h1>;
+} else {
+  <h1>Please Log In</h1>;
+}
+```
+
+---
+
+### **11. Avoid Using `this` Outside of Class Components**
+In function components, avoid using `this`. Use state and hooks instead.
+
+✅ **Correct (Function Component):**
+```jsx
+function App() {
+  const name = "John";
+  return <h1>Hello, {name}!</h1>;
+}
+```
+
+❌ **Incorrect:**
+```jsx
+function App() {
+  return <h1>Hello, {this.name}!</h1>;
+}
+```
+
+---
+
+### **12. Only Expressions or Components Can Be Returned**
+JSX elements or fragments are required as the return value.
+
+✅ **Correct:**
+```jsx
+return <div>Hello</div>;
+```
+
+❌ **Incorrect:**
+```jsx
+return "Hello";
+```
+
+---
+
+### **13. Do Not Use `if` Directly in JSX**
+Instead of `if`, use ternary operators or `&&` for conditional rendering.
+
+✅ **Correct:**
+```jsx
+<div>{isActive && <p>Active</p>}</div>
+```
+
+❌ **Incorrect:**
+```jsx
+<div>{if (isActive) { <p>Active</p> }}</div>
+```
+
+---
+
+### **14. Child Components Must Be Rendered**
+A JSX tag without children should be self-closing unless it is wrapped around content.
+
+✅ **Correct:**
+```jsx
+<MyComponent />
+<MyComponent>Content</MyComponent>
+```
+
+❌ **Incorrect:**
+```jsx
+<MyComponent>
+<MyComponent>Content</MyComponent
+```
+
+---
+
+### **15. Escape Special Characters**
+Use curly braces for special characters like `&`.
+
+✅ **Correct:**
+```jsx
+<p>{'&'}</p>
+```
+
+❌ **Incorrect:**
+```jsx
+<p>&</p>
+```
+
+---
+
+By following these rules, you can write syntactically correct and predictable JSX that works seamlessly with React.
+
+
+
 
 ## References
 https://github.com/enaqx/awesome-react
