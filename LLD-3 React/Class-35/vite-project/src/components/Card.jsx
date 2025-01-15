@@ -1,10 +1,11 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({cardData}) => {
+const Card = ({cardTitle , cardDescription}) => {
   return (
     <div className="card">
-      {cardData}
+      <div className="card-title">{cardTitle}</div>
+      <div className="card-description">{cardDescription}</div>
     </div>
   );
 };

@@ -14,3 +14,15 @@
     margin: 10px;
     text-align: center;
   }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  
+  /* Card description styling */
+  .card-description {
+    font-size: 14px;
+    color: #666;
+  }
