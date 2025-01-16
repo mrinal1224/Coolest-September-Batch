@@ -1,5 +1,6 @@
 import Card from "./components/Card";
 import Counter from "./components/Counter";
+import Form from "./components/Form";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         })}
       </div> */}
 
-      <Counter/>
+      {/* <Counter/> */}
+      <Form/>
     </div>
   );
 }
