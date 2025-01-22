@@ -2,6 +2,7 @@ import Card from "./components/Card";
 import Counter from "./components/Counter";
 import Form from "./components/Form";
 import Navbar from "./components/Navbar";
+import Ue1 from "./components/Ue1";
 
 function App() {
   // const cardData = [
@@ -21,7 +22,8 @@ function App() {
       </div> */}
 
       {/* <Counter/> */}
-      <Form/>
+      {/* <Form/> */}
+      <Ue1/>
     </div>
   );
 }
