@@ -5,6 +5,7 @@ import MovieCard from "./components/MovieCard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Watchlist from "./components/Watchlist";
 import MovieRecommendation from "./components/MovieRecommendation";
+import Movies from "./components/Movies";
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
               path="/"
               element={
                 <>
-                  <Banner /> <MovieCard />
+                  <Banner /> <Movies/>
                 </>
               }
             />
