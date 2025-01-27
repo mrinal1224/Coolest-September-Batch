@@ -8,12 +8,12 @@ function Pagination({pageNumber , nextFn , previousFn}) {
       mt-8 flex justify-center gap-4"
     >
       <div onClick={previousFn} className="px-8">
-        <i class="fa-solid fa-arrow-left"></i>
+        <i className="fa-solid fa-arrow-left"></i>
       </div>
       <div>{pageNumber}</div>
       <div onClick={nextFn} className="px-8">
         
-        <i class="fa-solid fa-arrow-right"></i>
+        <i className="fa-solid fa-arrow-right"></i>
       </div>
     </div>
   );
