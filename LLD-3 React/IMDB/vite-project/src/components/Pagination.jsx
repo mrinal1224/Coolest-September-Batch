@@ -1,4 +1,6 @@
+
 import React from "react";
+
 
 function Pagination({pageNumber , nextFn , previousFn}) {
 
