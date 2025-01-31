@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Watchlist from "./components/Watchlist";
 import MovieRecommendation from "./components/MovieRecommendation";
 import Movies from "./components/Movies";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [watchlist , setWatchList] = useState([])
@@ -15,8 +15,19 @@ function App() {
       setWatchList(updatedWatchList)
       console.log(updatedWatchList)
 
+      localStorage.setItem('movies' ,JSON.stringify(updatedWatchList))
+
       
   }
+
+
+  useEffect(()=>{
+    let moviesFromLs = localStorage.getItem('movies')
+    if(!moviesFromLs){
+      return 
+    }
+    setWatchList(JSON.parse(moviesFromLs))
+  }, [])
 
 
 
