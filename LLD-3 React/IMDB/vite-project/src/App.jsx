@@ -32,7 +32,7 @@ function App() {
               path="/"
               element={
                 <>
-                  <Banner /> <Movies addToWatchList={handleAddToWatchList}/>
+                  <Banner /> <Movies addToWatchList={handleAddToWatchList} watchList={watchlist}/>
                 </>
               }
             />
