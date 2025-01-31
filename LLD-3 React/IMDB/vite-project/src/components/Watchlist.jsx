@@ -1,6 +1,6 @@
 import React from "react";
 
-function Watchlist({ watchlist }) {
+function Watchlist({ watchlistData }) {
   return (
     <>
       <div>
@@ -21,7 +21,7 @@ function Watchlist({ watchlist }) {
             </tr>
           </thead>
           <tbody>
-            {watchlist.map((movieObj) => {
+            {watchlistData.map((movieObj) => {
               return (
                 <tr className="border-b-2">
                   <td className="px-6 py-4 flex items-center space-x-4">

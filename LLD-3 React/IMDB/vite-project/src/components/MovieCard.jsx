@@ -1,6 +1,7 @@
 import React from "react";
 
 function MovieCard({ movieObject , finalAddtoWatchList}) {
+  
   return (
     <div className="space-x-8 space-y-8">
       <div
