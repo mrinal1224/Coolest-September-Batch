@@ -10,7 +10,7 @@ function MovieCard({ movieObject , finalAddtoWatchList}) {
         }}
       >
 
-       <div onClick={finalAddtoWatchList(movieObject)} className="flex justify-center items-center">&#128525;</div>
+       <div onClick={()=>finalAddtoWatchList(movieObject)} className="flex justify-center items-center">&#128525;</div>
     
         <h5 className="text-white text-center text-xl rounded-lg p-2 bg-gray-900/25 ">{movieObject.title}</h5>
       </div>

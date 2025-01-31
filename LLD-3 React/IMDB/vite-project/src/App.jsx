@@ -11,9 +11,10 @@ function App() {
   const [watchlist , setWatchList] = useState([])
 
   const handleAddToWatchList = (movieObj)=>{
-      let updatedWatchList = [movieObj]
+      let updatedWatchList = [...watchlist, movieObj]
       setWatchList(updatedWatchList)
-      console.log(watchlist)
+      console.log(updatedWatchList)
+
       
   }
 
@@ -36,7 +37,7 @@ function App() {
               }
             />
 
-            <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/watchlist" element={<Watchlist watchlist={watchlist}  />} />
 
             <Route path="/recommend" element={<MovieRecommendation />} />
           </Routes>

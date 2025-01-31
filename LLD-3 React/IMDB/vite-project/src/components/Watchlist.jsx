@@ -1,6 +1,6 @@
 import React from "react";
 
-function Watchlist() {
+function Watchlist({ watchlist }) {
   return (
     <>
       <div>
@@ -21,22 +21,30 @@ function Watchlist() {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b-2">
-              <td className="px-6 py-4 flex items-center space-x-4">
-                <img
-                  className="h-[6rem] w-[10rem]"
-                  src="https://i.pinimg.com/originals/29/7d/e0/297de0761b0c756266d74ca50d03cc1d.jpg"
-                  alt="Movie"
-                />
-                <div>Movie Title</div>
-              </td>
-              <td className="px-6 py-4 text-center">10</td>
-              <td className="px-6 py-4 text-center">10</td>
-              <td className="px-6 py-4 text-center">Action</td>
-              <td className="px-6 py-4 text-center text-red-500 cursor-pointer">
-                Delete
-              </td>
-            </tr>
+            {watchlist.map((movieObj) => {
+              return (
+                <tr className="border-b-2">
+                  <td className="px-6 py-4 flex items-center space-x-4">
+                    <img
+                      className="h-[6rem] w-[10rem]"
+                      src={`https://image.tmdb.org/t/p/original/${movieObj.backdrop_path}`}
+                      alt="Movie"
+                    />
+                    <div>{movieObj.title}</div>
+                  </td>
+                  <td className="px-6 py-4 text-center">
+                    {movieObj.vote_average}
+                  </td>
+                  <td className="px-6 py-4 text-center">
+                    {movieObj.popularity}
+                  </td>
+                  <td className="px-6 py-4 text-center">Action</td>
+                  <td className="px-6 py-4 text-center text-red-500 cursor-pointer">
+                    Delete
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
