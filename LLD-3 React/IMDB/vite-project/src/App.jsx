@@ -7,6 +7,8 @@ import Watchlist from "./components/Watchlist";
 import MovieRecommendation from "./components/MovieRecommendation";
 import Movies from "./components/Movies";
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
