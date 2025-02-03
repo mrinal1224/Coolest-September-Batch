@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MovieContext } from "./MovieContext";
 
-function MovieCard({ movieObject, finalAddtoWatchList, watchList }) {
+
+
+function MovieCard({ movieObject}) {
+  let {watchlist , handleAddToWatchList}= useContext(MovieContext)
+
+
   function doesContain() {
-    for (let i = 0; i < watchList.length; i++) {
-      if (watchList[i].id === movieObject.id) {
+    for (let i = 0; i < watchlist.length; i++) {
+      if (watchlist[i].id === movieObject.id) {
         return true;
       }
     }
@@ -26,7 +32,7 @@ function MovieCard({ movieObject, finalAddtoWatchList, watchList }) {
           </div>
         ) : (
           <div
-            onClick={() => finalAddtoWatchList(movieObject)}
+            onClick={() => handleAddToWatchList(movieObject)}
             className="flex justify-center items-center"
           >
             &#128525;
