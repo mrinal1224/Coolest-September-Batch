@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import genreids from "../utlities/genre.js";
 
 function Watchlist({ watchlistData }) {
   const [search, setSearch] = useState("");
 
+  console.log(genreids);
+
   function handleSearch(e) {
     setSearch(e.target.value);
-    console.log(search)
+    console.log(search);
   }
 
   return (
@@ -34,32 +37,38 @@ function Watchlist({ watchlistData }) {
             </tr>
           </thead>
           <tbody>
-            {watchlistData.filter((movieObj)=>{
-              return movieObj.title.toLowerCase().includes(search.toLowerCase())
-            }).map((movieObj) => {
-              return (
-                <tr className="border-b-2">
-                  <td className="px-6 py-4 flex items-center space-x-4">
-                    <img
-                      className="h-[6rem] w-[10rem]"
-                      src={`https://image.tmdb.org/t/p/original/${movieObj.backdrop_path}`}
-                      alt="Movie"
-                    />
-                    <div>{movieObj.title}</div>
-                  </td>
-                  <td className="px-6 py-4 text-center">
-                    {movieObj.vote_average}
-                  </td>
-                  <td className="px-6 py-4 text-center">
-                    {movieObj.popularity}
-                  </td>
-                  <td className="px-6 py-4 text-center">Action</td>
-                  <td className="px-6 py-4 text-center text-red-500 cursor-pointer">
-                    Delete
-                  </td>
-                </tr>
-              );
-            })}
+            {watchlistData
+              .filter((movieObj) => {
+                return movieObj.title
+                  .toLowerCase()
+                  .includes(search.toLowerCase());
+              })
+              .map((movieObj) => {
+                return (
+                  <tr className="border-b-2">
+                    <td className="px-6 py-4 flex items-center space-x-4">
+                      <img
+                        className="h-[6rem] w-[10rem]"
+                        src={`https://image.tmdb.org/t/p/original/${movieObj.backdrop_path}`}
+                        alt="Movie"
+                      />
+                      <div>{movieObj.title}</div>
+                    </td>
+                    <td className="px-6 py-4 text-center">
+                      {movieObj.vote_average}
+                    </td>
+                    <td className="px-6 py-4 text-center">
+                      {movieObj.popularity}
+                    </td>
+                    <td className="px-6 py-4 text-center">
+                      {genreids[movieObj.genre_ids[0]]}
+                    </td>
+                    <td className="px-6 py-4 text-center text-red-500 cursor-pointer">
+                      Delete
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
