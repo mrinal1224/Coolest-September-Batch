@@ -1,21 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import genreids from "../utlities/genre.js";
 
 function Watchlist({ watchlistData }) {
   const [search, setSearch] = useState("");
+  const [genreList, setGenreList] = useState([]);
+  const [currGenre , setCurrGenre] = useState('All Genres')
 
-  console.log(genreids);
+  useEffect(() => {
+    let temp = watchlistData.map((movieObj) => {
+      return genreids[movieObj.genre_ids[0]];
+    });
+
+    temp = new Set(temp);
+
+    setGenreList(["All Genres", ...temp]);
+  }, [watchlistData]);
+
+  function handleFilter(genre){
+    setCurrGenre(genre)
+  }
 
   function handleSearch(e) {
     setSearch(e.target.value);
     console.log(search);
   }
 
+  console.log(genreList);
+
   return (
     <>
-      <div className="flex justify-center my-10 w-full">
-        {/* genre Filter */}
+      <div className="flex justify-center m-4">
+        {genreList.map((genre) => {
+          return (
+            <div
+              onClick={() => handleFilter(genre)}
+              className={
+                currGenre == genre
+                  ? "mx-4 flex justify-center items-center bg-blue-400 h-[3rem] w-[9rem] text-white font-bold border rounded-xl"
+                  : "flex justify-center items-center h-[3rem] w-[9rem] bg-gray-400/50 rounded-xl text-white font-bold mx-4"
+              }
+            >
+              {genre}
+            </div>
+          );
+        })}
+      </div>
 
+      <div className="flex justify-center my-10 w-full">
         <input
           className="bg-gray-200 h-[3rem] w-[18rem] outline-none border border-slate-600"
           placeholder="Search Movies"
