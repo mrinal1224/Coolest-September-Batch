@@ -68,7 +68,13 @@ function Watchlist({ watchlistData }) {
             </tr>
           </thead>
           <tbody>
-            {watchlistData
+            {watchlistData.filter((movieObj)=>{
+              if(currGenre=='All Genres'){
+                return true
+              }else{
+                return genreids[movieObj.genre_ids[0]]==currGenre // Horror
+              }
+            })
               .filter((movieObj) => {
                 return movieObj.title
                   .toLowerCase()
