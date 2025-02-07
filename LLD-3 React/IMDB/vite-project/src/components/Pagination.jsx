@@ -1,22 +1,33 @@
-
 import React from "react";
 
-
-function Pagination({pageNumber , nextFn , previousFn}) {
-
+function Pagination({ pageNumber, nextFn, previousFn }) {
   return (
-    <div
-      className="bg-gray-400 h-[50px] w-full
-      mt-8 flex justify-center gap-4"
-    >
-      <div onClick={previousFn} className="px-8">
+    <div className="flex justify-center items-center gap-4 mt-8">
+      {/* Previous Button */}
+      <button
+        onClick={previousFn}
+        disabled={pageNumber === 1}
+        className={`px-4 py-2 rounded-full text-white transition duration-300 ${
+          pageNumber === 1
+            ? "bg-gray-500 cursor-not-allowed"
+            : "bg-blue-500 hover:bg-blue-600"
+        }`}
+      >
         <i className="fa-solid fa-arrow-left"></i>
-      </div>
-      <div>{pageNumber}</div>
-      <div onClick={nextFn} className="px-8">
-        
+      </button>
+
+      {/* Page Number */}
+      <span className="text-lg font-semibold px-4 py-2 bg-gray-300 text-gray-800 rounded-md shadow">
+        Page {pageNumber}
+      </span>
+
+      {/* Next Button */}
+      <button
+        onClick={nextFn}
+        className="px-4 py-2 bg-blue-500 text-white rounded-full transition duration-300 hover:bg-blue-600"
+      >
         <i className="fa-solid fa-arrow-right"></i>
-      </div>
+      </button>
     </div>
   );
 }

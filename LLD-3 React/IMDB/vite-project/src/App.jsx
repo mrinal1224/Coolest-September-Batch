@@ -7,6 +7,8 @@ import MovieRecommendation from "./components/MovieRecommendation";
 import Movies from "./components/Movies";
 import { useEffect, useState } from "react";
 import { MovieContext } from "./components/MovieContext";
+import ThemeProvider from "./components/ThemeContext";
+
 
 function App() {
   const [watchlist , setWatchList] = useState([])
@@ -36,6 +38,7 @@ function App() {
 
   return (
     <>
+  <ThemeProvider>
    <MovieContext.Provider value={{handleAddToWatchList , watchlist}}>
       <BrowserRouter>
         <Navbar />
@@ -57,6 +60,7 @@ function App() {
         </div>
       </BrowserRouter>
       </MovieContext.Provider>
+      </ThemeProvider>
     </>
   );
 }
