@@ -26,6 +26,11 @@ test("the counter increments by 1", () => {
   expect(screen.getByTestId("counter")).toHaveTextContent("Count: 1");
 });
 
+
+
+
+
+
 test("the counter decrements by 1", () => {
   render(<Counter/>)
   const decBtn = screen.getByTestId("decrement")
