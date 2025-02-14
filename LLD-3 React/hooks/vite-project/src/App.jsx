@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Memo from './components/Memo'
 import MemoComponent from './components/MemoComponent'
+import Ref from './components/Ref'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +13,8 @@ function App() {
     <>
       <h1>Advanced Hooks</h1>
       {/* <Memo/> */}
-      <MemoComponent/>
+      {/* <MemoComponent/> */}
+      <Ref/>
     </>
   )
 }
