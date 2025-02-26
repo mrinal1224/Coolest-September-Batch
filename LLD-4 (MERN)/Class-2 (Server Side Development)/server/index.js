@@ -1,24 +1,25 @@
-const http = require('http')
-const fs = require('fs')
+const http = require("http");
+const fs = require("fs");
+const urlPack = require('url')
 
+const myServer = http.createServer((req, res) => {
+  const log = `${Date.now()}:${req.url} New Request Received\n`;
 
-const myServer = http.createServer((req , res)=>{
+  const parsedUrl = urlPack.parse(req.url , true);
+  console.log(parsedUrl)
 
-    const log = `${Date.now()}:${req.url} New Request Received\n`
+  fs.appendFile("log.txt", log, (err, data) => {
+    console.log("log updated");
+  });
 
-    const url = req.url
+  console.log("New Request Recieved");
 
-
-    fs.appendFile('log.txt' ,log , (err , data)=>{
-        console.log('log updated')
-    })
-
-    console.log('New Request Recieved')
-    
-    switch(url){
-      case '/': res.end('This is Home Page')
+  switch (parsedUrl.pathname) {
+    case "/":
+      res.end("This is Home Page");
       break;
-      case '/about':res.end(`<!DOCTYPE html>
+    case "/about":
+      res.end(`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -75,18 +76,18 @@ const myServer = http.createServer((req , res)=>{
     </section>
     <button onclick="alert('Thank you for visiting!')">Click Me</button>
 </body>
-</html>`)
+</html>`);
       break;
-      case '/contact': res.end('This is Contact Page')
+    case "/contact":
+      let userName = parsedUrl.query.name
+      res.end(`hello ${userName}`);
       break;
-      default : res.end('404 Not Found')
+    default:
+      res.end("404 Not Found");
       break;
-    }
-})
+  }
+});
 
-myServer.listen(8000, ()=>{
-    console.log('Server Started')
-})
-
-
-
+myServer.listen(8000, () => {
+  console.log("Server Started");
+});
