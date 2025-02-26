@@ -1,5 +1,3 @@
-
-
 ---
 title: Agenda of the lecture
 description: What will be covered in the topic?
