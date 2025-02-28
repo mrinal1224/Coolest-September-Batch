@@ -46,6 +46,44 @@ app.post("/courses", (req, res) => {
   res.send(courses);
 });
 
+
+// update the name of the course `Java` 
+// and change it to `Java with SpringBoot`
+// put
+
+app.put('/courses/:id' , (req , res)=>{
+    let course = courses.find((course) => course.id === parseInt(req.params.id));
+
+    if (!course) {
+        res.status(404).send("Did not find the Course to update");
+      }
+
+    course.name = req.body.name
+
+    res.send(course)
+})
+
+// delete 
+
+app.delete('/courses/:id' , (req , res)=>{
+    let course = courses.find((course) => course.id === parseInt(req.params.id));
+
+    if (!course) {
+        res.status(404).send("Did not find the Course to delete");
+      }
+
+    const index = courses.indexOf(course)
+    // 0
+
+    courses.splice(index , 1)//
+
+    res.send(course)
+})
+
+
+
+
+
 app.listen(8005, () => {
   console.log(`Server Started on port 8005`);
 });
