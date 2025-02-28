@@ -2,13 +2,15 @@
   "name": "server",
   "version": "1.0.0",
   "description": "this is a server that i have created for my class",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mrinal",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
     "url": "^0.11.4"
   }
 }
