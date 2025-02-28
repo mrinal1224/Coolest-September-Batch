@@ -1,33 +1,43 @@
-const express = require('express')
+const express = require("express");
 
-const app = express()
+const app = express();
 
-app.get('/', (req , res)=>{
-    res.send('Hello from Scaler Academy')
-})
+const courses = [
+  { id: 1, name: "java" },
+  { id: 2, name: "JavaScript" },
+  { id: 3, name: "Python" },
+];
+
+// I want to hit on `/courses` ,
+// I want to send the complete courses data
+
+app.get("/courses", (req, res) => {
+  res.send(courses);
+});
+
+// get a specific course
+
+app.get("/courses/:id", (req, res) => {
+   console.log(req.params)
+  let course = courses.find((course) => course.id === parseInt(req.params.id));
+  console.log(course)// undefined null , 0 - false
+ 
+
+  if(!course){
+     res.status(404).send('Did not find the Course')
+  }
+
+  res.send(course)
+});
+
+// post method
+
+// create a course
 
 
-app.get('/about' , (req , res)=>{
-    res.send('I am the About Page')
-})
-
-
-app.get('/contact' , (req , res)=>{
-    res.send('I am the Contact page')
-})
-
-
-app.listen(8005 , ()=>{
-    console.log(`Server Started on port 8005`)
-})
 
 
 
-
-
-
-
-
-
-
-
+app.listen(8005, () => {
+  console.log(`Server Started on port 8005`);
+});
