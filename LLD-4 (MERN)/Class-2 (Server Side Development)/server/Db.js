@@ -41,6 +41,32 @@ async function createCourse() {
 
 }
 
-createCourse()
+async function updateCourse(id){
+    let course = await CourseModel.findById(id)
+     if(!course){
+        console.log('No Course Found')
+        return
+     }
+     course.isPublished = true
+     course.name= 'Java with SQL'
+
+     await course.save()
+}
+
+async function deleteCourse(id){
+    let course = await CourseModel.findByIdAndDelete(id)
+    if(!course){
+       console.log('No Course Found')
+       return
+    }
+
+    console.log('Course Deleted')
+}
+
+// createCourse()
+
+// updateCourse('67c5e194cb98e41fcbe945a9')
+
+deleteCourse('67c5e194cb98e41fcbe945a9')
 
 
