@@ -1,0 +1,3 @@
+CG49xtLuH1IYRXhq
+
+mongodb+srv://mrinal1224:CG49xtLuH1IYRXhq@cluster0.tx2gb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
