@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form, Input, message } from "antd";
-
+import {Link} from 'react-router-dom'
 import "./auth.css";  // Importing CSS for consistency
 
 function Register() {
@@ -38,7 +38,7 @@ function Register() {
           </Button>
         </Form>
         <p className="switch-text">
-          Already a user? Login
+          Already a user?  New User? <Link to='/login'>Login here</Link>
         </p>
       </div>
     </div>
