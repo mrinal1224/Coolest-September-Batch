@@ -1,0 +1,112 @@
+/* Background Styling */
+*{
+    margin:0;
+    padding:0;
+}
+
+.auth-container {
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Overlay to darken background */
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  /* Login & Register Box */
+  .auth-box {
+    position: relative;
+    z-index: 2;
+    width: 400px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #f4c10f; /* Movie-themed yellow */
+  }
+  
+  /* Input Fields */
+  .input-field {
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Primary Button */
+  .auth-button {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    height: 45px;
+    margin-top: 1rem;
+    transition: 0.3s;
+  }
+  
+  .auth-button:hover {
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    transform: scale(1.05);
+  }
+  
+  /* Switch Text */
+  .switch-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .switch-text a {
+    color: #f4c10f;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .switch-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Change Form Label Color */
+  .label-white {
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 480px) {
+    .auth-box {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
+
+  /* Change the label color to white */
+.ant-form-item-label > label {
+    color: white !important;
+  }
+  
