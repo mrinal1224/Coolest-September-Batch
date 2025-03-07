@@ -23,6 +23,11 @@ const courseSchema = new mongoose.Schema({
   releaseDate: { type: Date, default: Date.now() },
 });
 
+
+
+
+
+
 // Model for Course
 
 let CourseModel = mongoose.model("course", courseSchema);
