@@ -58,7 +58,8 @@ router.post("/login", async (req, res) => {
     );
 
     if (!validPassword) {
-      res.send({
+
+      res.status(401).send({
         success: false,
         message: "Sorry, invalid password entered!",
       });
