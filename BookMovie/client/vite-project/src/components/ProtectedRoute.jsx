@@ -12,7 +12,7 @@ function ProtectedRoute({children}) {
      else{
          naviagte('/login')
      }
-  })
+  }, [])
 
   return (
     <div>{children}</div>
