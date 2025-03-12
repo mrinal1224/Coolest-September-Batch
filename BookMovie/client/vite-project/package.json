@@ -26,6 +26,6 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "vite": "^6.2.0"
-  },
-  "proxy": "http://localhost:8082"
+  }
+
 }
