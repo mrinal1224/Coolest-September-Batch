@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import "./auth.css";  // Custom CSS file for better styling
 
 function Login() {
+  
+
   return (
     <div className="auth-container">
       <div className="auth-box">
