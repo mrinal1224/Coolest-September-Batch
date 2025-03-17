@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 router.post("/register", async (req, res) => {
   try {
@@ -59,28 +60,34 @@ router.post("/login", async (req, res) => {
     );
 
     if (!validPassword) {
-
       res.status(401).send({
         success: false,
         message: "Sorry, invalid password entered!",
       });
     }
 
-
-   const jwtToken = jwt.sign({userId:user._id}, 'scaler_movies', {expiresIn:'2d'})
-
+    const jwtToken = jwt.sign({ userId: user._id }, "scaler_movies", {
+      expiresIn: "2d",
+    });
 
     res.send({
       success: true,
       message: "You've successfully logged in!",
-      token: jwtToken
+      token: jwtToken,
     });
-
-
-
   } catch (error) {
     console.error(error);
   }
+});
+
+router.get("/get-valid-user", authMiddleware, async (req, res) => {
+  const validUser = await User.findById(req.body.userId).select("-password");
+
+  res.send({
+    success: true,
+    message: "You are authorized to go to the protected route!",
+    data: validUser,
+  });
 });
 
 module.exports = router;
