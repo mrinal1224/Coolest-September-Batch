@@ -1,64 +1,56 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import { GetAllMovies } from "../../apiCalls/movies";
 
-
 function MovieList() {
 
- 
-  const getData = async ()=>{
-        const response = await GetAllMovies()
-        const allMovies = response.data
-        console.log(allMovies)
-  }
-
-  useEffect(()=>{
-    getData()
-  }, [])
+  const [movies , setMovies] = useState([])
 
 
+  const getData = async () => {
+    const response = await GetAllMovies();
+    const allMovies = response.data;
+    setMovies(allMovies)
+    console.log(allMovies);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const columns = [
     {
-        title: "Poster",
-        dataIndex: "poster",
-        key: "1",
-        render: (text) => <a>{text}</a>,
-      },
+      title: "Poster",
+      dataIndex: "poster",
+      key: "1",
+      render: (url) => <img src={url} style={{width:80, height:100}}/>,
+    },
     {
       title: "Title",
       dataIndex: "title",
       key: "title",
-      render: (text) => <a>{text}</a>,
     },
     {
-      title: "Description",
-      dataIndex: "description",
-      key: "description",
+      title: "Duration",
+      dataIndex: "duration",
+      key: "duration",
+      render: (text) => <p>{text} mins</p>
     },
     {
       title: "Genre",
-      dataIndex: "Genre",
-      key: "Genre",
+      dataIndex: "genre",
+      key: "genre",
     },
     {
       title: "Language",
-      key: "Language",
-      dataIndex: "Language",
-    },
-    {
-      title: "Release Date",
-      key: "Release Date",
+      key: "language",
+      dataIndex: "language",
     },
   ];
-  const data = [
-    {
 
-    }
-  ];
   return (
     <div>
-      <Table columns={columns} dataSource={data} />;
+      <Table columns={columns} dataSource={movies} />;
     </div>
   );
 }
