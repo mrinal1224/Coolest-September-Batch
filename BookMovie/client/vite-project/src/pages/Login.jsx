@@ -15,8 +15,9 @@ function Login() {
       const respone = await LoginUser(values)
       console.log(respone)
       if(respone.success){
-        navigate('/')
         localStorage.setItem("token", respone.token)
+        navigate('/')
+
        }
       else{
         console.log('you cannot move forward')
