@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GetCurrentUser } from "../apiCalls/users";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 import { message, Layout, Menu } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -11,7 +11,6 @@ import {
   ProfileOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 
 function ProtectedRoute({ children }) {
@@ -31,7 +30,16 @@ function ProtectedRoute({ children }) {
       children: [
         {
           label: (
-            <span>
+            <span onClick={()=>{
+              if(user.role==='admin'){
+                navigate('/admin')
+              }
+              else if(user.role==='partner'){
+                navigate('/partner')
+              } else{
+                navigate('/user')
+              }
+            }}>
               My Profile
             </span>
           ),

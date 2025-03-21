@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
  
-    <div  className="flex">
+    <div className="flex">
  
       {movies &&
         movies.map((movieObj) => (
