@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import { GetAllMovies } from "../../apiCalls/movies";
+import MovieForm from "./MovieForm";
 
 function MovieList() {
 
@@ -50,7 +51,8 @@ function MovieList() {
 
   return (
     <div>
-      <Table columns={columns} dataSource={movies} />;
+      <Table columns={columns} dataSource={movies} />
+      <MovieForm/>
     </div>
   );
 }

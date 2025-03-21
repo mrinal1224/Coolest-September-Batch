@@ -310,3 +310,7 @@
   .flex{
     display:flex;
   }
+
+  .d-block{
+    color: black;
+  }
