@@ -12,7 +12,7 @@ const MovieForm = ({
   setIsModalOpen,
   selectedMovie,
   setSelectedMovie,
-  formType,
+  formType, // add , edit
   getData,
 }) => {
   const dispatch = useDispatch();
@@ -38,6 +38,7 @@ const MovieForm = ({
         setSelectedMovie(null);
       } else {
         response = await updateMovie({ ...values, movieId: selectedMovie._id });
+    
         setSelectedMovie(null);
       }
       console.log(response);
