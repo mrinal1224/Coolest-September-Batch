@@ -312,5 +312,5 @@
   }
 
   .d-block{
-    color: black;
+    color: black !important;
   }

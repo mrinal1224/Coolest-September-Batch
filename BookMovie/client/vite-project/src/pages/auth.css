@@ -106,7 +106,5 @@
   }
 
   /* Change the label color to white */
-.ant-form-item-label > label {
-    color: white !important;
-  }
+
   

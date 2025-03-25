@@ -38,26 +38,24 @@ router.get("/get-all-movies", async (req, res) => {
 });
 
 // update a movie
-
-router.put("/update-movie", async (req, res) => {
-  try {
-    const movie = await Movie.findByIdAndUpdate(req.body._id, req.body, {
-      new: true,
-    });
-    res.send({
-      success: true,
-      message: "The movie has been updated!",
-      data: movie,
-    });
-  } catch (err) {
-    res.send({
-      success: false,
-      message: err.message,
-    });
+router.put('/update-movie', async (req, res) => {
+  try{
+      const movie = await Movie.findByIdAndUpdate(req.body.movieId, req.body);
+      res.send({
+          success: true,
+          message: 'The movie has been updated!',
+          data: movie
+      })
+  }catch(err){
+      res.send({
+          success: false,
+          message: err.message
+      })
   }
 });
 
 // delete a movie
+
 // Homework
 
 // Fetch single Movie with id
@@ -77,5 +75,21 @@ router.get("/movie/:id", async (req, res) => {
     });
   }
 });
+
+router.post('/delete-movie', async (req, res) => {
+  try{
+      await Movie.findByIdAndDelete(req.body.movieId);
+      console.log(req.body.movieId);
+      res.send({
+          success: true,
+          message: 'The movie has been deleted!',
+      });
+  }catch(err){
+      res.send({
+          success: false,
+          message: err.message
+      });
+  }
+})
 
 module.exports = router;
