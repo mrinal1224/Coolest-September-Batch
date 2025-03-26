@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const theatreSchema = new mongoose.Schema({
@@ -17,10 +18,12 @@ const theatreSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // owner: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+
+    
     isActive: {
         type: Boolean,
         default: false
