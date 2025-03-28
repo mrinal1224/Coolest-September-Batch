@@ -198,8 +198,8 @@ handleRemoval(ticketCont)
 
 // Attaching key event on the Modal
 
-modalCont.addEventListener("keydown", function (e) {
-  if (e.key === "Shift") {
+modalCont.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
     const task = textArea.value;
     const id = (Math.random() * 10000).toFixed(0)
     createTicket(modalPriorityColor, task , id);
