@@ -19,6 +19,7 @@ const Home = () => {
       const response = await GetAllMovies();
       if (response.success) {
         setMovies(response.data);
+        console.log(movies)
       } else {
         message.error(response.message);
       }
