@@ -6,6 +6,7 @@ import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { getAllTheatres } from '../../apiCalls/theatres';
 import { useSelector, useDispatch } from 'react-redux';
 import { showLoading, hideLoading } from '../../redux/loaderSlice';
+import ShowModal from './ShowModal';
 
 
 

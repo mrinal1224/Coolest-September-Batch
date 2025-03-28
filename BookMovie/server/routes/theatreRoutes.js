@@ -21,7 +21,10 @@ router.post('/add-theatre',  async (req, res) => {
 // Admin - Get All theartres - Admin should get all the theatres from differnet Owners
 router.get('/get-all-theatres', async (req, res) => {
     try{
-        const allTheatres = await Theatre.find().populate('owner')
+        const allTheatres = await Theatre.find().populate({
+            path:'owner',
+            select:'-password'
+        })
         res.send({
             success: true,
             message: "All theatres fetched!",
