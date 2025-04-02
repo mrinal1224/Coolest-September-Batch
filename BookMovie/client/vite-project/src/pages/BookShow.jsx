@@ -21,6 +21,7 @@ const BookShow = () => {
       dispatch(showLoading());
       const response = await getShowById({ showId: params.id });
       if (response.success) {
+        console.log(response.data)
         setShow(response.data);
         console.log(response.data);
       } else {
@@ -179,7 +180,7 @@ const BookShow = () => {
                   <h3>
                     <span>Date & Time: </span>
                     {moment(show.date).format("MMM Do YYYY")} at{" "}
-                    {moment(show.time, "HH:mm").format("hh:mm A")}
+                    {moment(show.time, "HH:mm").format("hh:mm A ")}
                   </h3>
                   <h3>
                     <span>Ticket Price:</span> Rs. {show.ticketPrice}/-
