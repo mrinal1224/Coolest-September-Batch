@@ -29,7 +29,7 @@ function MovieRecommendation() {
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
         const prompt = `Based on these movies: ${JSON.stringify(
           watchlistData
-        )}, 
+        )}, .
                suggest 5 similar movies. Return the result as a JSON array with the format:
                [
                  {

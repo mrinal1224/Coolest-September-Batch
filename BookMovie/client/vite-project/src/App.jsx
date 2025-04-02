@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Partner from "./pages/Partner";
 import Register from "./pages/Register";
+import BookShow from "./pages/BookShow";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/partner' element={<ProtectedRoute><Partner/></ProtectedRoute>}/>
           <Route path='/user' element={<ProtectedRoute><User/></ProtectedRoute>}/>
           <Route path="/movie/:id" element={<ProtectedRoute><SingleMovie/></ProtectedRoute>} />
+          <Route path="/book-show/:id" element={<ProtectedRoute><BookShow/></ProtectedRoute>} />
 
 
         </Routes>
