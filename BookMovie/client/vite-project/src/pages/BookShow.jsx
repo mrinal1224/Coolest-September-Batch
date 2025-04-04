@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { message, Card, Row, Col, Button } from "antd";
 import moment from "moment";
 import StripeCheckout from "react-stripe-checkout";
-// import { bookShow, makePayment } from "../apiCalls/bookings";
+import { bookShow, makePayment } from "../apiCalls/bookings";
 
 const BookShow = () => {
   const { user } = useSelector((state) => state.user);
@@ -34,9 +34,50 @@ const BookShow = () => {
     }
   };
 
-  const onToken = (token)=>{
+  // Function to Book
+  const book = async (transactionId) => {
+    try {
+      dispatch(showLoading());
+      const response = await bookShow({
+        show: params.id,
+        transactionId,
+        seats: selectedSeats,
+        user: user._id,
+      });
+      if (response.success) {
+        message.success("Show Booking done!");
+        navigate("/profile");
+      } else {
+        message.error(response.message);
+      }
+      dispatch(hideLoading());
+    } catch (err) {
+      message.error(err.message);
+      dispatch(hideLoading());
+    }
+  };
+// Function to generate payment token and pass it to server
+  const onToken = async (token) => {
     console.log(token)
-  }
+    try {
+      dispatch(showLoading());
+      const response = await makePayment(
+        token,
+        selectedSeats.length * show.ticketPrice * 100
+      );
+      if (response.success) {
+        message.success(response.message);
+        book(response.data);// transactionId
+         console.log(response);
+      } else {
+        message.error(response.message);
+      }
+      dispatch(hideLoading());
+    } catch (err) {
+      message.error(err.message);
+      dispatch(hideLoading());
+    }
+  };
 
   const getSeats = () => {
     if (!show) return null;
@@ -206,7 +247,7 @@ const BookShow = () => {
               {selectedSeats.length > 0 && (
                 <StripeCheckout
                   amount={selectedSeats.length * show.ticketPrice * 100}
-                  currency="INR"
+                 
                   stripeKey="pk_test_51JKPQWSJULHQ0FL7VOkMrOMFh0AHMoCFit29EgNlVRSvFkDxSoIuY771mqGczvd6bdTHU1EkhJpojOflzoIFGmj300Uj4ALqXa"
                   token={onToken}
                 >

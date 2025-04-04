@@ -7,6 +7,7 @@ import Partner from "./pages/Partner";
 import Register from "./pages/Register";
 import BookShow from "./pages/BookShow";
 
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import User from "./pages/User";
@@ -26,6 +27,14 @@ function App() {
           <Route path='/user' element={<ProtectedRoute><User/></ProtectedRoute>}/>
           <Route path="/movie/:id" element={<ProtectedRoute><SingleMovie/></ProtectedRoute>} />
           <Route path="/book-show/:id" element={<ProtectedRoute><BookShow/></ProtectedRoute>} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <User />
+              </ProtectedRoute>
+            }
+          />
 
 
         </Routes>
